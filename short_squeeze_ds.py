@@ -333,7 +333,7 @@ class Hash:
                 append_dict[nd.get_ticker()] = nd.shorts_pain
         append_dict = sorted(append_dict.items(), key=operator.itemgetter(1), reverse=True)
         for val in append_dict:
-            self.write_list.append(str(val[0] + '\t' + val[1] + '\n'))
+            self.write_list.append(str(str(val[0]) + '\t' + str(val[1]) + '\n'))
 
 
         self.write_list.append('\n\nTop 10 Stocks Experiencing Greatest Pain (Short Pain):\n')
