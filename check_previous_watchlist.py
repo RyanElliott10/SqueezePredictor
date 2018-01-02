@@ -93,7 +93,7 @@ with open(prev_watchlist, 'r+') as f:
 
 
 
-check_watchlist = './watch_lists/watch_list_for_' + year + '/'+ month + '_' + day + '_' + year + '_checked.txt'
+check_watchlist = './watch_lists/watch_list_for_' + year + '/'+ month + 'checked_watch_lists/' + '_' + day + '_' + year + '_checked.txt'
 
 with open(check_watchlist, 'w+') as f:
     for ticker in tick_lst:
