@@ -339,10 +339,10 @@ class Hash:
         self.write_list.append('\n\nTop 10 Stocks Experiencing Greatest Pain (Short Pain):\n')
         if len(self.sorted_ranked_shares) < 10:
             for stock in self.sorted_ranked_shares:
-                self.write_list.append(str(stock[0]) + '\t' + str(stock[1]) + '\n')#, '\t', nd.days_to_cover)
+                self.write_list.append(str(stock[0]) + '\t' + str(stock[1]) + '\n')
         else:
             for stock in self.sorted_ranked_shares[:10]:
-                self.write_list.append(str(stock[0]) + '\t' + str(stock[1]) + '\n')#, '\t', nd.days_to_cover)
+                self.write_list.append(str(stock[0]) + '\t' + str(stock[1]) + '\n')
 
         self.write_to_file()
 
