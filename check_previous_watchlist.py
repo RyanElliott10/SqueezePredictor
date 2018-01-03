@@ -21,7 +21,6 @@ def get_page(url):
             client_page = uReq(url)
             cont = False
         except:
-            print(url, 'ha')
             time.sleep(5)
     webpage = client_page.read()
 
