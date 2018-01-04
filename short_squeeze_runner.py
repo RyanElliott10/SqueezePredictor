@@ -27,7 +27,7 @@ from yahoo_finance import Share
 
 hash_table = short_squeeze_ds.Hash()
 
-csv_lst = ['companylist.csv', '../companylist (1).csv', '../companylist (2).csv']
+csv_lst = ['/CSV_files/companylist.csv', '/CSV_files/companylist (1).csv', 'CSV_files/companylist (2).csv']
 #csv_lst = ['companylist (1).csv']
 
 
