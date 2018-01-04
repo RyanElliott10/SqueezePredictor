@@ -12,8 +12,8 @@ import time
 # ^ all of the imports to use yahoo finance api
 
 import operator
-
 import bs4
+
 from urllib.request import urlopen as uReq
 from bs4 import BeautifulSoup as soup
 
@@ -45,6 +45,8 @@ class Hash:
         self.ranked_shares = {}
         self.sorted_ranked_shares = None
         self.write_list = []
+        self.good_yearly_low = []
+        self.bad_yearly_low = []
 
     def get_primes(self, filename):             # works
         """ Reads from file containing list of primes up to 200000 and appends each prime to a list. """
@@ -184,8 +186,8 @@ class Hash:
 
     """ BEGINNING OF TRUE FUNCTIONS (I.E. THE SCREENING PART) """
 
-# Currently, the 'perfect' stock has a volume and price uptrend, >= 5% shares float, beta > 1% or < -1, price at or below $7.50,
-# and if the percent change between the days is >= 5%.
+# Currently, the 'perfect' stock has a volume and price uptrend, >= 5% shares float, beta > 1% or < -1, price at or below $10.00,
+# and daily percent change between the days is >= 5%.
 
 
 
@@ -209,18 +211,22 @@ class Hash:
 
                 # gets the current price
                 try:
-                    nd.curr = float(page.findAll('span')[9].text)
+                    nd.curr_price = float(page.findAll('span')[9].text)
                 except:
                     self.write_list.append(str(ticker + " - Couldn't get current price\n"))
                     not_lst.append(ticker)
                     cont = False
 
+
                 if cont:
+                    # checks if the stock is within 15% of 52 week low
+                    self.check_yearly_low(nd, page)
+
                     # gets the previous close price
                     nd.prev_close = float(page.findAll('span', {'class':'Trsdu(0.3s) '})[0].text)
 
                     # calculates percent change and rounds to 3 decimals
-                    nd.perc_change = round((((nd.curr / nd.prev_close) - 1) * 100), 3)
+                    nd.perc_change = round((((nd.curr_price / nd.prev_close) - 1) * 100), 3)
 
                     # gets the average volume
                     text_avg_volume = page.findAll('span', {'class':'Trsdu(0.3s) '})[5].text.replace(',', '')
@@ -293,7 +299,17 @@ class Hash:
 
 
         append_dict = {}
-        self.write_list.append('\n\n\nPossible Great Stocks (Shorts Pain):\n')
+        self.write_list.append('\n\n\nShares with Shorts >= 15%:\n')
+        for nd in self.high_short_shares:
+            if nd.shorts_percent_float >= 15:
+                append_dict[nd.get_ticker()] = nd.perc_change
+        append_dict = sorted(append_dict.items(), key=operator.itemgetter(1), reverse=True)
+        for val in append_dict:
+            self.write_list.append(str(str(val[0])+ '\t' + str(val[1]) + '\n'))
+
+
+        append_dict = {}
+        self.write_list.append('\n\n\nPossible Great Stocks (Short Pain, Within 15% of 52 Week Low):\n')
         for nd in self.watchlist:
             nd_trues = 0
             if nd.high_beta:
@@ -306,40 +322,30 @@ class Hash:
                 nd_trues += 1
 
             if nd_trues >= 3:
-                append_dict[nd.get_ticker()] = nd.shorts_pain
+                append_dict[nd] = nd.shorts_pain
         append_dict = sorted(append_dict.items(), key=operator.itemgetter(1), reverse=True)
         for val in append_dict:
-            self.write_list.append(str(str(val[0]) + '\t' + str(val[1]) + '\n'))
-
-
-        append_dict = {}
-        self.write_list.append('\n\n\nShares with Shorts >= 15%:\n')
-        for nd in self.high_short_shares:
-            if nd.shorts_percent_float >= 15:
-                append_dict[nd.get_ticker()] = nd.perc_change
-        append_dict = sorted(append_dict.items(), key=operator.itemgetter(1), reverse=True)
-        for val in append_dict:
-            self.write_list.append(str(str(val[0])+ ' ' + str(val[1]) + '\n'))
+            self.write_list.append(str(str(val[0].get_ticker()) + '\t' + str(val[1]) + '\t\t' + str(val[0].yearly_low) + '\n'))
 
 
         # like I did below. If I ever want to print three or more things, just use a list for the value
         append_dict = {}
-        self.write_list.append('\n\n\nThe Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Shorts Pain):\n')
+        self.write_list.append('\n\n\nThe Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain, Within 15% of 52 Week Low):\n')
         for nd in self.pos_vol_trend_list:
             if nd.price_uptrend and nd in self.high_short_shares and ((nd.avg_volume * 30) >= nd.curr_volume):
-                append_dict[nd.get_ticker()] = nd.shorts_pain
+                append_dict[nd] = nd.shorts_pain
         append_dict = sorted(append_dict.items(), key=operator.itemgetter(1), reverse=True)
         for val in append_dict:
-            self.write_list.append(str(str(val[0]) + '\t' + str(val[1]) + '\n'))
+            self.write_list.append(str(str(val[0].get_ticker()) + '\t' + str(val[1]) + '\t\t' + str(val[0].yearly_low) + '\n'))
 
 
-        self.write_list.append('\n\nTop 10 Stocks Experiencing Greatest Pain (Short Pain):\n')
+        self.write_list.append('\n\nTop 10 Stocks Experiencing Greatest Pain (Short Pain, Within 15% of 52 Week Low):\n')
         if len(self.sorted_ranked_shares) < 10:
             for stock in self.sorted_ranked_shares:
-                self.write_list.append(str(stock[0]) + '\t' + str(stock[1]) + '\n')
+                self.write_list.append(str(stock[0].get_ticker()) + '\t' + str(stock[1]) + '\t\t' + str(stock[0].yearly_low) + '\n')
         else:
             for stock in self.sorted_ranked_shares[:10]:
-                self.write_list.append(str(stock[0]) + '\t' + str(stock[1]) + '\n')
+                self.write_list.append(str(stock[0].get_ticker()) + '\t' + str(stock[1]) + '\t\t' + str(stock[0].yearly_low) + '\n')
 
         self.write_to_file()
 
@@ -551,12 +557,40 @@ class Hash:
 
 
 
+    def check_yearly_low(self, nd, page):
+        """ Determines if the stock is within range of the yearly low. Assigns a weight to it based on this. """
+
+        curr = page.findAll('tr')[5].text[13:]
+
+        low = ''
+        count = 0
+        for char in curr:
+            count += 1
+            if char == ' ':
+                break
+            else:
+                low += char
+
+        high = float(curr[count + 1:].replace(',', ''))
+        low = float(low)
+
+        if (nd.curr_price / (high - low)) <= 0.15:
+            self.good_yearly_low.append(nd)
+            nd.yearly_low = True
+        else:
+            self.bad_yearly_low.append(nd)
+
+        # calculation to determine what weight to assign it
+
+
+
+
     def check_pain(self, nd):
         """ Ranks stocks that have the highest probability of a short squeeze. Salculates short percentage by percentage
             change in a day. Could also incorporate over a weekly basis, bring in other metrics, etc. Perhaps incorporate the
             amount of money the shorts have lost, too. """
 
-        self.ranked_shares[nd.get_ticker()] = round((nd.shorts_percent_float * nd.perc_change), 3)
+        self.ranked_shares[nd] = round((nd.shorts_percent_float * nd.perc_change), 3)
         nd.shorts_pain = round((nd.shorts_percent_float * nd.perc_change), 3)
         self.sorted_ranked_shares = sorted(self.ranked_shares.items(), key=operator.itemgetter(1), reverse=True)
 
@@ -651,8 +685,8 @@ class Hash:
                         curr_volume = val['Volume']             # make this more efficient, find a way to assign the last value outside of the for loop
 
                     nd.prev_close = lst[len(lst) - 2]['Close']
-                    nd.curr = lst[len(lst) - 1]['Close']
-                    perc_change = ((nd.curr / nd.prev_close) - 1) * 100
+                    nd.curr_price = lst[len(lst) - 1]['Close']
+                    perc_change = ((nd.curr_price / nd.prev_close) - 1) * 100
 
                     if perc_change >= 5:
                         nd.days_twenty_perc_above_avg_volume += 1

@@ -7,7 +7,7 @@ class Node:
         self.name = name
         self.prev_close = prev_close
         self.open = open_p
-        self.curr = curr
+        self.curr_price = curr
         self.perc_change = 0
         self.avg_volume = 0
         self.vol_uptrend = True
@@ -18,6 +18,7 @@ class Node:
         self.shorts_percent_float = 0
         self.shorts_pain = 0
         self.days_to_cover = 0
+        self.yearly_low = False
 
     def get_ticker(self):
         return self.ticker
