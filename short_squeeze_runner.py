@@ -30,8 +30,6 @@ manual_tickers = []
 
 insert_from_csv(csv_lst)
 
-#hash_table.insert('AMD')
-
 print('Total tickers to search:', hash_table.num_items, '\n')
 hash_table.init_run()
 hash_table.check_watchlist()
