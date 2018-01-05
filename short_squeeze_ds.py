@@ -14,13 +14,16 @@ import time
 import operator
 import bs4
 
-try: #python3
-    from urllib.request import urlopen as uReq
-except: #python2
-    from urllib2 import urlopen as uReq
+#try: #python3
+#    from urllib.request import urlopen as uReq
+#except: #python2
+#    from urllib2 import urlopen as uReq
 from bs4 import BeautifulSoup as soup
 
 # ^ all of the imports for BeautifulSoup
+
+import requests
+import progressbar
 
 
 
@@ -203,8 +206,12 @@ class Hash:
 
         self.write_list.append('Ticker\t% Chng\n\n')
 
+        bar = progressbar.ProgressBar(max_value=sum(x is not None for x in self.hash_table))
+        foo = 0
         for nd in self.hash_table:
             if nd is not None:
+                bar.update(foo)
+                foo += 1
                 cont = True
                 ticker = nd.get_ticker()
                 url = 'https://finance.yahoo.com/quote/' + ticker + '?p=' + ticker
@@ -608,8 +615,9 @@ class Hash:
 
         while cont:
             try:
-                client_page = uReq(url)
-                webpage = client_page.read()
+                #client_page = uReq(url)
+                #webpage = client_page.read()
+                webpage = requests.get(url).text
                 cont = False
             except:
                 sleep_cont += 1
@@ -617,7 +625,7 @@ class Hash:
                 if sleep_cont > 5:
                     self.write_list.append('Something seems to be wrong with your connection\n')
 
-        client_page.close()
+        #client_page.close()
         return(soup(webpage, 'html.parser'))
 
 
