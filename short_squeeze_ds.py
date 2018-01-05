@@ -14,7 +14,10 @@ import time
 import operator
 import bs4
 
-from urllib.request import urlopen as uReq
+try: #python3
+    from urllib.request import urlopen as uReq
+except: #python2
+    from urllib2 import urlopen as uReq
 from bs4 import BeautifulSoup as soup
 
 # ^ all of the imports for BeautifulSoup
