@@ -358,7 +358,7 @@ class Hash:
                 append_dict[nd] = nd.shorts_pain
         append_dict = sorted(append_dict.items(), key=operator.itemgetter(1), reverse=True)
         for val in append_dict:
-            self.write_list.append(str(str(val[0].get_ticker()) + '\t' + str(val[1]) + '\t\t' + str(val[0].yearly_low) + '\n'))
+            self.write_list.append(str(str(val[0].get_ticker()) + '\t' + str(val[1]) + '\n'))# + '\t\t' + str(val[0].yearly_low) + '\n'))
         temp_dict = append_dict
 
 
@@ -369,7 +369,7 @@ class Hash:
                 append_dict[nd] = nd.shorts_pain
         append_dict = sorted(append_dict.items(), key=operator.itemgetter(1), reverse=True)
         for val in append_dict:
-            self.write_list.append(str(str(val[0].get_ticker()) + '\t' + str(val[1]) + '\t\t' + str(val[0].yearly_low) + '\n'))
+            self.write_list.append(str(str(val[0].get_ticker()) + '\t' + str(val[1]) + '\n'))# + '\t\t' + str(val[0].yearly_low) + '\n'))
 
 
         self.write_list.append('\n\nTop 10 Stocks Experiencing Greatest Pain (Short Pain, Within 15% of 52 Week Low):\n')
@@ -377,10 +377,10 @@ class Hash:
             pass
         elif len(self.sorted_ranked_shares) < 10:
             for stock in self.sorted_ranked_shares:
-                self.write_list.append(str(stock[0].get_ticker()) + '\t' + str(stock[1]) + '\t\t' + str(stock[0].yearly_low) + '\n')
+                self.write_list.append(str(stock[0].get_ticker()) + '\t' + str(stock[1]) + '\n')# + '\t\t' + str(stock[0].yearly_low) + '\n')
         else:
             for stock in self.sorted_ranked_shares[:10]:
-                self.write_list.append(str(stock[0].get_ticker()) + '\t' + str(stock[1]) + '\t\t' + str(stock[0].yearly_low) + '\n')
+                self.write_list.append(str(stock[0].get_ticker()) + '\t' + str(stock[1]) + '\n')# + '\t\t' + str(stock[0].yearly_low) + '\n')
 
         self.write_to_file()
 
@@ -613,10 +613,13 @@ class Hash:
             print(page)
         low = float(low)
 
-        if (nd.curr_price / (high - low)) <= 0.15:
-            self.good_yearly_low.append(nd)
-            nd.yearly_low = True
-        else:
+        try:
+            if (nd.curr_price / (high - low)) <= 0.15:
+                self.good_yearly_low.append(nd)
+                nd.yearly_low = True
+            else:
+                self.bad_yearly_low.append(nd)
+        except:
             self.bad_yearly_low.append(nd)
 
         # calculation to determine what weight to assign it
