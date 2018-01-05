@@ -27,14 +27,16 @@ from yahoo_finance import Share
 
 hash_table = short_squeeze_ds.Hash()
 
-csv_lst = ['/CSV_files/companylist.csv', '/CSV_files/companylist (1).csv', 'CSV_files/companylist (2).csv']
-#csv_lst = ['companylist (1).csv']
+csv_lst = ['./CSV_files/companylist.csv', './CSV_files/companylist (1).csv', './CSV_files/companylist (2).csv']
+#csv_lst = ['./CSV_files/companylist (1).csv']
 
 
 for f in csv_lst:
     with open(f, 'rt') as filename:
         reader = csv.reader(filename, 'excel')
-        for row in reader:
+        for i, row in enumerate(reader):
+            #if i == 500:
+                #break
             if row[0] != 'Symbol' and '^' not in row[0] and '.' not in row[0] and row[2] != 'n/a' and float(row[2]) <= 10 and len(row[0]) < 5 and row[0] != 'TVIX' and row[0] != 'VIIZ' and 'M' in row[3]:
                     hash_table.insert(row[0])
 

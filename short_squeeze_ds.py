@@ -340,7 +340,9 @@ class Hash:
 
 
         self.write_list.append('\n\nTop 10 Stocks Experiencing Greatest Pain (Short Pain, Within 15% of 52 Week Low):\n')
-        if len(self.sorted_ranked_shares) < 10:
+        if not self.sorted_ranked_shares:
+            pass
+        elif len(self.sorted_ranked_shares) < 10:
             for stock in self.sorted_ranked_shares:
                 self.write_list.append(str(stock[0].get_ticker()) + '\t' + str(stock[1]) + '\t\t' + str(stock[0].yearly_low) + '\n')
         else:
@@ -362,7 +364,7 @@ class Hash:
         month = next_date[1]
         day = next_date[2]
 
-        filename = './watch_lists/' + next_date[3] + '/' + month + '/watch_lists' + '/watch_list_for_' + month + '_' + day + '_' + year + '.txt'
+        filename = '../watch_lists/' + next_date[3] + '/' + month + '/watch_lists/watch_list_for_' + month + '_' + day + '_' + year + '.txt'
 
         with open(filename, 'w+') as f:
             for val in self.write_list:
