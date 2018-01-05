@@ -51,26 +51,35 @@ check_lst = ['Stocks with Positive Price and Volume Trend:', 'Stocks with High B
 
 tick_lst = []
 
-prev_watchlist = './watch_lists/' + str(today.year) + '/' + month + '/checked_watch_lists' + '/watch_list_for_' + month + '_' + day + '_' + year + '.txt'
-#prev_watchlist = './watch_lists/watch_list_for_' + month + '_' + day + '_' + year + '.txt'
+prev_watchlist = '../watch_lists/' + str(today.year) + '/' + month + '/watch_lists' + '/watch_list_for_' + month + '_' + day + '_' + year + '.txt'
 
 with open(prev_watchlist, 'r+') as f:
     get = False
     for line in f:
         tick = ''
         cont = True
-        line = line.strip()
+        line = line.strip().replace('\t', ' ')
         for char in line:
             if char == ' ':
-                cont = False
+                break
             elif cont:
                 tick = tick + char
-        if get and len(line) <= 15 and len(line) >= 1:
+
+        if line == 'High Shorts Float:':
+            tick_lst.append(line + '\n')
+            get = True
+        elif line in check_lst:
+            tick_lst.append('\n\n' + line + '\n')
+            get = True
+        elif get and len(line) <= 15 and len(line) >= 1:
             url = 'https://finance.yahoo.com/quote/' + tick + '?p=' + tick
             page = get_page(url)
 
             # gets the current price
-            curr = float(page.findAll('span')[9].text)
+            try:
+                curr = float(page.findAll('span')[9].text)
+            except:
+                print('error:', url)
 
             # gets the previous close price
             prev_close = float(page.findAll('span', {'class':'Trsdu(0.3s) '})[0].text)
@@ -83,16 +92,10 @@ with open(prev_watchlist, 'r+') as f:
                 tick_lst.append(tick + '\t' + str(perc_change) + '\tWinner')
             else:
                 tick_lst.append(tick + '\t' + str(perc_change))
-        elif line == 'High Shorts Float:':
-            tick_lst.append(line + '\n')
-            get = True
-        elif line in check_lst:
-            tick_lst.append('\n\n' + line + '\n')
-            get = True
 
 
 
-check_watchlist = './watch_lists/watch_list_for_' + year + '/' + month + 'checked_watch_lists/' + '_' + day + '_' + year + '_checked.txt'
+check_watchlist = '../watch_lists/' + str(today.year) + '/' + month + '/checked_watch_lists/' + '_' + month + '_' + day + '_' + year + '_checked.txt'
 
 with open(check_watchlist, 'w+') as f:
     for ticker in tick_lst:

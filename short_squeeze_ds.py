@@ -329,13 +329,13 @@ class Hash:
         append_dict = sorted(append_dict.items(), key=operator.itemgetter(1), reverse=True)
         for val in append_dict:
             self.write_list.append(str(str(val[0].get_ticker()) + '\t' + str(val[1]) + '\t\t' + str(val[0].yearly_low) + '\n'))
+        temp_dict = append_dict
 
 
-        # like I did below. If I ever want to print three or more things, just use a list for the value
         append_dict = {}
         self.write_list.append('\n\n\nThe Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain, Within 15% of 52 Week Low):\n')
         for nd in self.pos_vol_trend_list:
-            if nd.price_uptrend and nd in self.high_short_shares and ((nd.avg_volume * 30) >= nd.curr_volume):
+            if nd not in temp_dict and nd.price_uptrend and nd in self.high_short_shares and ((nd.avg_volume * 30) >= nd.curr_volume):
                 append_dict[nd] = nd.shorts_pain
         append_dict = sorted(append_dict.items(), key=operator.itemgetter(1), reverse=True)
         for val in append_dict:
