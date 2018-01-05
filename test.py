@@ -44,7 +44,10 @@ while cont:
 client_page.close()
 page = soup(webpage, 'html.parser')
 
-curr = page.findAll('tr')[5].text[13:]
+#curr = page.findAll('tr')[5].text[13:]
+curr = page.findAll('span')[9].text
+
+print(curr)
 
 low = ''
 count = 0
