@@ -54,6 +54,5 @@ def insert_from_csv(csv_lst, stop_num=999999):
 def manual_insert(lst):
     """ Allows the user to manually enter tickers, mainly for testing. """
 
-    for i, row in enumerate(reader):
-        if row[0] != 'Symbol' and '^' not in row[0] and '.' not in row[0] and row[2] != 'n/a' and float(row[2]) <= 10 and len(row[0]) < 5 and row[0] != 'TVIX' and row[0] != 'VIIZ' and 'M' in row[3]:
-                hash_table.insert(row[0])
+    for row in lst:
+        hash_table.insert(row)
