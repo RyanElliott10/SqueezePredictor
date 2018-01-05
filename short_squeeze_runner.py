@@ -28,7 +28,7 @@ from yahoo_finance import Share
 hash_table = short_squeeze_ds.Hash()
 
 csv_lst = ['csv_files/companylist.csv', 'csv_files/companylist (1).csv', 'csv_files/companylist (2).csv']
-#csv_lst = ['companylist (1).csv']
+#csv_lst = ['csv_files/companylist (2).csv']
 
 
 for f in csv_lst:
@@ -41,5 +41,10 @@ for f in csv_lst:
 #hash_table.insert('AMD')
 
 print('Total tickers to search:', hash_table.num_items, '\n')
+#TODO: allow user to skip pre-fetch .. this will also invalidate cache
+print('Prefetching webpages:')
+hash_table.pre_fetch_webpages()
+print('\n','Screening stocks:')
 hash_table.init_run()
+print('\n','Checking watchlist:')
 hash_table.check_watchlist()

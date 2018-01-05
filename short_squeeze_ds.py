@@ -14,17 +14,14 @@ import time
 import operator
 import bs4
 
-#try: #python3
-#    from urllib.request import urlopen as uReq
-#except: #python2
-#    from urllib2 import urlopen as uReq
 from bs4 import BeautifulSoup as soup
 
 # ^ all of the imports for BeautifulSoup
 
 import requests
 import progressbar
-
+import requests_cache
+import concurrent.futures
 
 
 class Hash:
@@ -185,8 +182,25 @@ class Hash:
                 print('$' + val.get_ticker())
 
 
+    #Utility function to prefetch webpages concurrently
+    def pre_fetch_webpages(self):
+        requests_cache.install_cache('cache', backend='sqlite', expire_after=3600)
+        with concurrent.futures.ThreadPoolExecutor(max_workers=50) as executor:
+            bar = progressbar.ProgressBar(max_value=self.num_items-1)
+            future_to_tickers = {executor.submit(self.get_page_async, nd): nd for nd in self.hash_table if nd is not None}
+            foo = 0
+            for future in concurrent.futures.as_completed(future_to_tickers):
+                bar.update(foo)
+                foo += 1
+        
 
-
+    def get_page_async(self, nd):
+        if nd is not None:
+            ticker = nd.get_ticker()
+            url = 'https://finance.yahoo.com/quote/' + ticker + '?p=' + ticker
+            page = self.get_page(url)
+            url = 'https://finance.yahoo.com/quote/' + ticker + '/history?p=' + ticker
+            page = self.get_page(url)
 
 
 
@@ -206,7 +220,8 @@ class Hash:
 
         self.write_list.append('Ticker\t% Chng\n\n')
 
-        bar = progressbar.ProgressBar(max_value=sum(x is not None for x in self.hash_table))
+
+        bar = progressbar.ProgressBar(max_value=self.num_items-1)
         foo = 0
         for nd in self.hash_table:
             if nd is not None:
@@ -285,7 +300,11 @@ class Hash:
     def check_watchlist(self):
         """ Further screens the watchlist. Calls functions that call other functions. """
 
+        bar = progressbar.ProgressBar(max_value=len(self.watchlist)-1)
+        foo = 0
         for nd in self.watchlist:
+            bar.update(foo)
+            foo += 1
             ticker = nd.get_ticker()
 
             url = 'https://finance.yahoo.com/quote/' + ticker + '/history?p=' + ticker
@@ -581,7 +600,11 @@ class Hash:
             else:
                 low += char
 
-        high = float(curr[count + 1:].replace(',', ''))
+        try:
+            high = float(curr[count + 1:].replace(',', ''))
+        except:
+            print(nd)
+            print(page)
         low = float(low)
 
         if (nd.curr_price / (high - low)) <= 0.15:
