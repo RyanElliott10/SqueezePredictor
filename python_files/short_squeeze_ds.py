@@ -38,7 +38,7 @@ class Hash:
         self.hash_table = [None] * self.capacity
         self.primes_list = []
         self.watchlist = []
-        self.get_primes('primes_to_200000.txt')
+        self.get_primes('../support_files/primes_to_200000.txt')
         self.neg_vol_trend_list = []
         self.pos_vol_trend_list = []
         self.neg_price_trend_list = []

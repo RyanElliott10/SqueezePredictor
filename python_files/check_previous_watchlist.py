@@ -94,6 +94,9 @@ with open(prev_watchlist, 'r+') as f:
                 tick_lst.append(tick + '\t' + str(perc_change))
 
 
+print('Prefetching webpages:')
+
+
 
 check_watchlist = '../watch_lists/' + str(today.year) + '/' + month + '/checked_watch_lists/' + '_' + month + '_' + day + '_' + year + '_checked.txt'
 
