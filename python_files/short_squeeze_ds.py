@@ -232,6 +232,8 @@ class Hash:
             page = self.get_page(url)
             url = 'https://finance.yahoo.com/quote/' + ticker + '/history?p=' + ticker
             page = self.get_page(url)
+            url = 'https://finance.yahoo.com/quote/' + ticker + '/key-statistics?p=' + ticker
+            page = self.get_page(url)
 
 
 
