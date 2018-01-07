@@ -1,13 +1,15 @@
-# Created By: Ryan M. Elliott, Computer Science student at California Polytechnic State University, SLO
-# GitHub:
+# Created By: Ryan M. Elliott, Computer Science student at California Polytechnic State University, San Luis Obispo
+# GitHub: https://github.com/RyanElliott10
 # Created: December 11, 2017
 # Algorithmic program to determine whether a stock is a potential candidate for a short squeeze
-# Supporting classes: short_squeeze_ds.py, ss_ds_node.py
+# Supporting files: short_squeeze_ds.py
 
 
+# supporting files
 import short_squeeze_ds
 import csv
 
+# imports for Yahoo! Finance API, Pandas, and MatPlotLib
 import datetime
 """import matplotlib.pyplot as plt
 from matplotlib import style
@@ -16,8 +18,6 @@ import matplotlib.dates as mdates"""
 import pandas as pd
 import pandas_datareader.data as web
 from yahoo_finance import Share
-
-# ^ all of the imports to use Yahoo! Finance API, Pandas, and MatPlotLib
 
 
 def insert_from_csv(csv_lst, stop_num=999999):
