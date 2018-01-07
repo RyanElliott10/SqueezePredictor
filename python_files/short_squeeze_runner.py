@@ -50,6 +50,7 @@ csv_lst2 = ['../support_files/csv_files/companylist (1).csv']
 manual_tickers = []
 
 insert_from_csv(csv_lst)
+#manual_insert('MIN')
 
 print('Total tickers to search:', hash_table.num_items, '\n')
 #TODO: allow user to skip pre-fetch .. this will also invalidate cache

@@ -81,6 +81,7 @@ class Hash:
         self.write_list = []
         self.good_yearly_low = []
         self.bad_yearly_low = []
+        self.four_day_uptrend = []
 
     def get_primes(self, filename):
         """ Reads from file containing list of primes up to 200000 and appends each prime to a list. """
@@ -281,7 +282,7 @@ class Hash:
 
                 if cont:
                     # checks if the stock is within 15% of 52 week low
-                    self.check_yearly_low(nd, page)
+                    #self.check_yearly_low(nd, page)
 
                     # gets the previous close price
                     nd.prev_close = float(page.findAll('span', {'class':'Trsdu(0.3s) '})[0].text)
@@ -318,8 +319,9 @@ class Hash:
                         nd.days_twenty_perc_above_avg_volume += 1
                         self.write_list.append(str(ticker + '\t' + str(nd.perc_change) + '\n'))
                         self.watchlist.append(nd)
-                    elif cont and nd.perc_change > 0:
-                        self.alt_price_uptrend(nd)
+                    elif cont and nd.perc_change > 0 and self.alt_price_uptrend(nd):
+                        self.watchlist.append(nd)
+                        self.four_day_uptrend.append(nd)
 
 
         # prints the tickers not found, if any
@@ -376,8 +378,15 @@ class Hash:
             self.write_list.append(str(str(val[0])+ '\t' + str(val[1]) + '\n'))
 
 
+
+        self.write_list.append('\n\n\nShares with price uptrend for 4 or more days:\n')
+        for nd in self.four_day_uptrend:
+            self.write_list.append(str(nd.ticker + '\n'))
+
+
+
         append_dict = {}
-        self.write_list.append('\n\n\nPossible Great Stocks (Short Pain, Within 15% of 52 Week Low):\n')
+        self.write_list.append('\n\n\nPossible Great Stocks (Short Pain, 4 Day Price Uptrend):\n')
         for nd in self.watchlist:
             nd_trues = 0
             if nd.high_beta:
@@ -393,29 +402,29 @@ class Hash:
                 append_dict[nd] = nd.shorts_pain
         append_dict = sorted(append_dict.items(), key=operator.itemgetter(1), reverse=True)
         for val in append_dict:
-            self.write_list.append(str(str(val[0].ticker) + '\t' + str(val[1]) + '\n'))# + '\t\t' + str(val[0].yearly_low) + '\n'))
+            self.write_list.append(str(str(val[0].ticker) + '\t' + str(val[1])) + '\t\t' + str(self.alt_price_uptrend(val[0])) + '\n')
         temp_dict = append_dict
 
 
         append_dict = {}
-        self.write_list.append('\n\n\nThe Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain, Within 15% of 52 Week Low):\n')
+        self.write_list.append('\n\n\nThe Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain, 4 Day Price Uptrend):\n')
         for nd in self.pos_vol_trend_list:
             if nd not in temp_dict and nd.price_uptrend and nd in self.high_short_shares and ((nd.avg_volume * 30) >= nd.curr_volume):
                 append_dict[nd] = nd.shorts_pain
         append_dict = sorted(append_dict.items(), key=operator.itemgetter(1), reverse=True)
         for val in append_dict:
-            self.write_list.append(str(str(val[0].ticker) + '\t' + str(val[1]) + '\n'))# + '\t\t' + str(val[0].yearly_low) + '\n'))
+            self.write_list.append(str(str(val[0].ticker) + '\t' + str(val[1])) + '\t\t' + str(self.alt_price_uptrend(val[0])) + '\n')
 
 
-        self.write_list.append('\n\nTop 10 Stocks Experiencing Greatest Pain (Short Pain, Within 15% of 52 Week Low):\n')
+        self.write_list.append('\n\nTop 10 Stocks Experiencing Greatest Pain (Short Pain):\n')
         if not self.sorted_ranked_shares:
             pass
         elif len(self.sorted_ranked_shares) < 10:
             for stock in self.sorted_ranked_shares:
-                self.write_list.append(str(stock[0].ticker) + '\t' + str(stock[1]) + '\n')# + '\t\t' + str(stock[0].yearly_low) + '\n')
+                self.write_list.append(str(stock[0].ticker) + '\t' + str(stock[1]) + '\n')# + '\t\t' + str(self.alt_price_uptrend(val[0])) + '\n')
         else:
             for stock in self.sorted_ranked_shares[:10]:
-                self.write_list.append(str(stock[0].ticker) + '\t' + str(stock[1]) + '\n')# + '\t\t' + str(stock[0].yearly_low) + '\n')
+                self.write_list.append(str(stock[0].ticker) + '\t' + str(stock[1]) + '\n')# + '\t\t' + str(self.alt_price_uptrend(val[0])) + '\n')
 
         self.write_to_file()
 
@@ -464,7 +473,7 @@ class Hash:
                 nd.days_twenty_perc_above_avg_volume += 1
 
             # only checks the most recent 6 days of trading for uptrend - edit this so that it is more specific and everything
-            if i >= 6:
+            if i < 6:
                 if prev_volume < volume:
                     vol_uptrend += 1
                     vol_downtrend = 0
@@ -686,8 +695,7 @@ class Hash:
         prev_close = 0
 
         # iterates through the most recent 4 trading days
-        for i, tr in enumerate(reversed(tr_list[8:12])):
-
+        for i, tr in enumerate(reversed(tr_list[0:5])):
             # safeguards against any failed price-gather attempts
             try:
                 close = float(tr.findAll('td')[5].text)
@@ -695,14 +703,13 @@ class Hash:
                 break
 
             # performs the checks for price uptrend
-            if close < prev_close:
-                return
+            if close < (prev_close * 1.02):
+                return False
 
             prev_close = close
 
         # appends node to price trend list
-        self.pos_price_trend_list.append(nd)
-        self.watchlist.append(nd)
+        return True
 
 
 
