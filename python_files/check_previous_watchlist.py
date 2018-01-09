@@ -9,6 +9,35 @@ import time
 import datetime
 
 
+def calculations(tick):
+    """ Calculate the percent change. """
+
+    url = 'https://finance.yahoo.com/quote/' + tick + '?p=' + tick
+    page = get_page(url)
+
+    # gets the current price
+    try:
+        curr = float(page.findAll('span')[9].text)
+    except:
+        return
+
+    # gets the previous close price
+    try:
+        prev_close = float(page.findAll('span', {'class':'Trsdu(0.3s) '})[0].text)
+    except:
+        return
+
+    # calculates percent change and rounds to 3 decimals
+    perc_change = round((((curr / prev_close) - 1) * 100), 2)
+    if perc_change >= 5 and perc_change < 15:
+        tick_lst.append(tick + '\t' + str(perc_change) + '\tWatch Again')
+    elif perc_change >= 15:
+        tick_lst.append(tick + '\t' + str(perc_change) + '\tWinner')
+    else:
+        tick_lst.append(tick + '\t' + str(perc_change))
+
+
+
 
 def get_page(url):
     """ Abstraction to protect against failed URL attempts. """
@@ -47,58 +76,43 @@ year = str(today.year)[2:]
 month = str(today.month)
 day = str(today.day)
 
-check_lst = ['Stocks with Positive Price and Volume Trend:', 'Stocks with High Beta:', 'Possible Good Stocks (Short Pain, Within 15% of 52 Week Low):', 'Possible Great Stocks (Short Pain, Within 15% of 52 Week Low):', 'Shares with Shorts >= 15%:', 'The Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain, Within 15% of 52 Week Low):', 'Top 10 Stocks Experiencing Greatest Pain (Short Pain, Within 15% of 52 Week Low):']
+check_lst = ['Stocks with Positive Price and Volume Trend:', 'Shares with Shorts >= 15%:', 'Shares with price uptrend for 4 or more days:', 'Possible Great Stocks (Short Pain, 4 Day Price Uptrend):', 'The Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain, 4 Day Price Uptrend):', 'Top 10 Stocks Experiencing Greatest Pain (Short Pain):']
 
 tick_lst = []
-
 prev_watchlist = '../watch_lists/' + str(today.year) + '/' + month + '/watch_lists' + '/watch_list_for_' + month + '_' + day + '_' + year + '.txt'
 
 with open(prev_watchlist, 'r+') as f:
     get = False
     for line in f:
-        tick = ''
-        cont = True
-        line = line.strip().replace('\t', ' ')
-        for char in line:
-            if char == ' ':
-                break
-            elif cont:
-                tick = tick + char
-
-        if line == 'High Shorts Float:':
-            tick_lst.append(line + '\n')
-            get = True
-        elif line in check_lst:
-            tick_lst.append('\n\n' + line + '\n')
-            get = True
-        elif get and len(line) <= 15 and len(line) >= 1:
-            url = 'https://finance.yahoo.com/quote/' + tick + '?p=' + tick
-            page = get_page(url)
-
-            # gets the current price
-            try:
-                curr = float(page.findAll('span')[9].text)
-            except:
-                print('error:', url)
-
-            # gets the previous close price
-            prev_close = float(page.findAll('span', {'class':'Trsdu(0.3s) '})[0].text)
-
-            # calculates percent change and rounds to 3 decimals
-            perc_change = round((((curr / prev_close) - 1) * 100), 3)
-            if perc_change >= 5 and perc_change < 15:
-                tick_lst.append(tick + '\t' + str(perc_change) + '\tWatch Again')
-            elif perc_change >= 15:
-                tick_lst.append(tick + '\t' + str(perc_change) + '\tWinner')
+        # determines when to start getting the prices
+        if not get:
+            if line == '\n':
+                prev_line_new += 1
             else:
-                tick_lst.append(tick + '\t' + str(perc_change))
+                prev_line_new = 0
+            if prev_line_new == 3:
+                get = True
+
+        # if get is True, it will append to the write_list
+        else:
+            tick = ''
+            line = line.strip()
+
+            if line in check_lst:
+                tick_lst.append('\n\n' + line + '\n')
+            elif line != '\n':
+                for char in line:
+                    if char == '\t':
+                        break
+                    tick += char
+                calculations(tick)
 
 
-print('Prefetching webpages:')
+#print('Prefetching webpages:')
 
 
 
-check_watchlist = '../watch_lists/' + str(today.year) + '/' + month + '/checked_watch_lists/' + '_' + month + '_' + day + '_' + year + '_checked.txt'
+check_watchlist = '../watch_lists/' + str(today.year) + '/' + month + '/checked_watch_lists/' + month + '_' + day + '_' + year + '_checked.txt'
 
 with open(check_watchlist, 'w+') as f:
     for ticker in tick_lst:

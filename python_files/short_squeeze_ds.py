@@ -275,7 +275,6 @@ class Hash:
                 try:
                     nd.curr_price = float(page.findAll('span')[9].text)
                 except:
-                    self.write_list.append(str(ticker + " - Couldn't get current price\n"))
                     not_lst.append(ticker)
                     cont = False
 
