@@ -98,7 +98,9 @@ with open(prev_watchlist, 'r+') as f:
             tick = ''
             line = line.strip()
 
-            if line in check_lst:
+            if line == 'Stocks with Positive Price and Volume Trend:':
+                tick_lst.append(line + '\n')
+            elif line in check_lst:
                 tick_lst.append('\n\n' + line + '\n')
             elif line != '\n':
                 for char in line:
