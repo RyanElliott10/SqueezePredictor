@@ -410,7 +410,7 @@ class Hash:
         append_dict = {}
         self.write_list.append('\n\n\nThe Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain, 4 Day Price Uptrend):\n')
         for nd in self.pos_vol_trend_list:
-            if nd not in temp_dict and nd.price_uptrend and nd in self.high_short_shares and ((nd.avg_volume * 30) >= nd.curr_volume):
+            if nd not in temp_dict and nd.price_uptrend and nd in self.high_short_shares:
                 append_dict[nd] = nd.shorts_pain
         append_dict = sorted(append_dict.items(), key=operator.itemgetter(1), reverse=True)
         for val in append_dict:
@@ -493,7 +493,6 @@ class Hash:
 
                 prev_volume = volume
 
-        nd.curr_volume = float((tr_list[1].findAll('td')[6].text).replace(',', ''))
 
         if not nd.vol_uptrend:
             cont = True
