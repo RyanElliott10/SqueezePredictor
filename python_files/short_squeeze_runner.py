@@ -37,7 +37,7 @@ def manual_insert(lst):
     """ Allows the user to manually enter tickers, mainly for testing. """
 
     for row in lst:
-        hash_table.insert(row, 7.50)
+        hash_table.insert(row)
 
 
 
@@ -49,7 +49,7 @@ csv_lst = ['../support_files/csv_files/companylist.csv', '../support_files/csv_f
 csv_lst2 = ['../support_files/csv_files/companylist-2.csv']
 manual_tickers = []
 
-insert_from_csv(csv_lst)
+insert_from_csv(csv_lst, 7.50)
 #manual_insert('MIN')
 
 print('Total tickers to search:', hash_table.num_items, '\n')
