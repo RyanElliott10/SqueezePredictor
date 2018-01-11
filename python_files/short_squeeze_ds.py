@@ -373,7 +373,7 @@ class Hash:
         self.write_list.append('\n\n\nShares with Shorts >= 15%:\n')
         for nd in self.high_short_shares:
             if nd.shorts_percent_float >= 15:
-                append_dict[nd.ticker] = nd.perc_change
+                append_dict[nd.ticker] = nd.shorts_percent_float
         append_dict = sorted(append_dict.items(), key=operator.itemgetter(1), reverse=True)
         for val in append_dict:
             self.write_list.append(str(str(val[0])+ '\t' + str(val[1]) + '\n'))
@@ -598,11 +598,6 @@ class Hash:
             except:
                 pass
             i += 1
-
-        if i == 52:
-            nd.days_to_cover = 'Unable to find percent float of shorts'
-        else:
-            nd.days_to_cover = round((nd.shorts_percent_float / nd.avg_volume), 3)
 
         if nd.shorts_percent_float >= 15 and nd.perc_change >= 10:
             self.high_shares_perc_change.append(nd)

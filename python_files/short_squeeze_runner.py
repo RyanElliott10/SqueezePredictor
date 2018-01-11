@@ -45,8 +45,8 @@ def manual_insert(lst):
 hash_table = short_squeeze_ds.Hash()
 
 
-csv_lst = ['../support_files/csv_files/companylist.csv', '../support_files/csv_files/companylist (1).csv', '../support_files/csv_files/companylist (2).csv']
-csv_lst2 = ['../support_files/csv_files/companylist (1).csv']
+csv_lst = ['../support_files/csv_files/companylist.csv', '../support_files/csv_files/companylist-2.csv', '../support_files/csv_files/companylist-3.csv']
+csv_lst2 = ['../support_files/csv_files/companylist-2.csv']
 manual_tickers = []
 
 insert_from_csv(csv_lst)
