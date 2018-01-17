@@ -25,6 +25,21 @@ from bs4 import BeautifulSoup as soup
 
 
 
+string = 'NOG	6.198'
+string.strip()
+
+tick = ''
+for char in string:
+    if char == '\t':
+        break
+    tick += char
+
+print(tick)
+
+"""for char in string:
+    print(repr(char))"""
+
+
 url = 'https://finance.yahoo.com/quote/INSY?p=INSY'
 
 sleep_cont = 0

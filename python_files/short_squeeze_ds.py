@@ -282,8 +282,8 @@ class Hash:
 
 
                 if cont:
-                    # checks if the stock is within 15% of 52 week low
-                    #self.check_yearly_low(nd, page)
+                    # checks if the stock is within 35% of 52 week low
+                    self.check_yearly_low(nd, page)
 
                     # gets the previous close price
                     nd.prev_close = float(page.findAll('span', {'class':'Trsdu(0.3s) '})[0].text)
@@ -361,7 +361,6 @@ class Hash:
 
 
         append_dict = {}
-
         # simply sorts the stocks into postive trends and not postive trends
         self.write_list.append('\n\n\nStocks with Positive Price and Volume Trend:\n')
         for nd in self.pos_vol_trend_list:
@@ -384,6 +383,10 @@ class Hash:
         for nd in self.four_day_uptrend:
             self.write_list.append(str(nd.ticker + '\n'))
 
+
+        self.write_list.append('\n\n\nShares within 35% of 52 week low:\n')
+        for nd in self.good_yearly_low:
+            self.write_list.append(str(nd.ticker + '\n'))
 
 
         append_dict = {}
@@ -517,7 +520,7 @@ class Hash:
 
 
     def check_price_trend(self, nd, page):
-        """ Ensures the stock sent in has had a positive price trend the previous 6 trading days. If it does, it will stay on
+        """ Ensures the stock has had a positive price trend the previous 6 trading days. If it does, it will stay on
         the watchlist, otherwise it will be removed. """
 
         tr_list = page.findAll('tr')
@@ -653,7 +656,8 @@ class Hash:
         low = float(low)
 
         try:
-            if (nd.curr_price / (high - low)) <= 0.15:
+            #if current price is within 35% of the low, where the 35% is based off the high
+            if nd.curr_price <= ((high * .35) + low):
                 self.good_yearly_low.append(nd)
                 nd.yearly_low = True
             else:

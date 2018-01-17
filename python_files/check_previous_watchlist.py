@@ -76,7 +76,7 @@ year = str(today.year)[2:]
 month = str(today.month)
 day = str(today.day)
 
-check_lst = ['Stocks with Positive Price and Volume Trend:', 'Shares with Shorts >= 15%:', 'Shares with price uptrend for 4 or more days:', 'Possible Great Stocks (Short Pain, 4 Day Price Uptrend):', 'The Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain, 4 Day Price Uptrend):', 'Top 10 Stocks Experiencing Greatest Pain (Short Pain):']
+check_lst = ['Stocks with Positive Price and Volume Trend:', 'Shares with Shorts >= 15%:', 'Shares with price uptrend for 4 or more days:', 'Possible Great Stocks (Short Pain, 4 Day Price Uptrend):', 'The Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain, 4 Day Price Uptrend):', 'Top 10 Stocks Experiencing Greatest Pain (Short Pain):', 'Shares within 35% of 52 week low:']
 
 tick_lst = []
 prev_watchlist = '../watch_lists/' + str(today.year) + '/' + month + '/watch_lists' + '/watch_list_for_' + month + '_' + day + '_' + year + '.txt'
