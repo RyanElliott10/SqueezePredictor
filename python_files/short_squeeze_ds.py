@@ -655,10 +655,12 @@ class Hash:
             high = float(curr[count + 1:].replace(',', ''))
         except:
             self.bad_yearly_low.append(nd)
+            return
         try:
             low = float(low)
         except:
             self.bad_yearly_low.append(nd)
+            return
 
         try:
             #if current price is within 35% of the low, where the 35% is based off the high
@@ -669,6 +671,7 @@ class Hash:
                 self.bad_yearly_low.append(nd)
         except:
             self.bad_yearly_low.append(nd)
+            return
 
         # calculation to determine what weight to assign it
 
