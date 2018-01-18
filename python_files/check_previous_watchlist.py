@@ -27,7 +27,7 @@ def calculations(tick):
     except:
         return
 
-    # calculates percent change and rounds to 3 decimals
+    # calculates percent change and rounds to 2 decimals
     perc_change = round((((curr / prev_close) - 1) * 100), 2)
     if perc_change >= 5 and perc_change < 15:
         tick_lst.append(tick + '\t' + str(perc_change) + '\tWatch Again')

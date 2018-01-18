@@ -379,14 +379,17 @@ class Hash:
 
 
 
-        self.write_list.append('\n\n\nShares with price uptrend for 4 or more days:\n')
+        self.write_list.append('\n\n\nShares with price uptrend for 4 or more days and near 52 week low:\n')
         for nd in self.four_day_uptrend:
-            self.write_list.append(str(nd.ticker + '\n'))
+            if nd in self.good_yearly_low:
+                self.write_list.append(str(nd.ticker + '\n'))
 
 
+        """
         self.write_list.append('\n\n\nShares within 35% of 52 week low:\n')
         for nd in self.good_yearly_low:
             self.write_list.append(str(nd.ticker + '\n'))
+        """
 
 
         append_dict = {}
@@ -651,13 +654,15 @@ class Hash:
         try:
             high = float(curr[count + 1:].replace(',', ''))
         except:
-            print(nd)
-            print(page)
-        low = float(low)
+            pass
+        try:
+            low = float(low)
+        except:
+            self.bad_yearly_low.append(nd)
 
         try:
             #if current price is within 35% of the low, where the 35% is based off the high
-            if nd.curr_price <= ((high * .35) + low):
+            if nd.curr_price <= (low * 1.35):
                 self.good_yearly_low.append(nd)
                 nd.yearly_low = True
             else:
