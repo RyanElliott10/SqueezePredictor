@@ -654,7 +654,7 @@ class Hash:
         try:
             high = float(curr[count + 1:].replace(',', ''))
         except:
-            pass
+            self.bad_yearly_low.append(nd)
         try:
             low = float(low)
         except:
