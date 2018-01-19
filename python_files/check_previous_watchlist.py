@@ -3,13 +3,21 @@ import bs4
 from urllib.request import urlopen as uReq
 from bs4 import BeautifulSoup as soup
 
-# ^ all of the imports for BeautifulSoup
+# imports for BeautifulSoup
 
 import time
 import datetime
 
+# imports for progressbar, website prefetching
+import requests
+import progressbar
+import requests_cache
+import concurrent.futures
 
-def calculations(tick):
+
+
+
+def calculations(tick, calc_count):
     """ Calculate the percent change. """
 
     url = 'https://finance.yahoo.com/quote/' + tick + '?p=' + tick
@@ -29,6 +37,17 @@ def calculations(tick):
 
     # calculates percent change and rounds to 2 decimals
     perc_change = round((((curr / prev_close) - 1) * 100), 2)
+
+
+    changed = False
+    for key in check_dict:
+        if check_dict[key] == calc_count:
+            tick_lst.append('\n\n' + key + '\n')
+            changed = True
+            out_key = key
+    if changed:
+        del check_dict[out_key]
+
     if perc_change >= 5 and perc_change < 15:
         tick_lst.append(tick + '\t' + str(perc_change) + '\tWatch Again')
     elif perc_change >= 15:
@@ -36,6 +55,7 @@ def calculations(tick):
     else:
         tick_lst.append(tick + '\t' + str(perc_change))
 
+    return(changed)
 
 
 
@@ -47,26 +67,19 @@ def get_page(url):
 
     while cont:
         try:
-            client_page = uReq(url)
-            cont = False
-        except:
-            time.sleep(5)
-    webpage = client_page.read()
-
-    cont = True
-    while cont:
-        try:
-            client_page = uReq(url)
-            webpage = client_page.read()
+            webpage = requests.get(url).text
             cont = False
         except:
             sleep_cont += 1
-            time.sleep(7.5)
+            time.sleep(5)
             if sleep_cont > 5:
                 print('Something seems to be wrong with your connection')
 
-    client_page.close()
     return(soup(webpage, 'html.parser'))
+
+
+
+
 
 
 
@@ -76,13 +89,20 @@ year = str(today.year)[2:]
 month = str(today.month)
 day = str(today.day)
 
-check_lst = ['Stocks with Positive Price and Volume Trend:', 'Shares with Shorts >= 15%:', 'Shares with price uptrend for 4 or more days:', 'Possible Great Stocks (Short Pain, 4 Day Price Uptrend):', 'The Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain, 4 Day Price Uptrend):', 'Top 10 Stocks Experiencing Greatest Pain (Short Pain):', 'Shares within 35% of 52 week low:']
+check_lst = ['Stocks with Positive Price and Volume Trend:', 'Shares with Shorts >= 15%:', 'Shares with price uptrend for 4 or more days and near 52 week low:', 'Possible Great Stocks (Short Pain, 4 Day Price Uptrend):', 'The Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain, 4 Day Price Uptrend):', 'Top 10 Stocks Experiencing Greatest Pain (Short Pain):', 'Shares within 35% of 52 week low:']
 
-tick_lst = []
+tick_lst = ['Stocks with Positive Price and Volume Trend:\n']
+tickers = []
+check_dict = {}
 prev_watchlist = '../watch_lists/' + str(today.year) + '/' + month + '/watch_lists' + '/watch_list_for_' + month + '_' + day + '_' + year + '.txt'
+
+
+
 
 with open(prev_watchlist, 'r+') as f:
     get = False
+    count = 0
+
     for line in f:
         # determines when to start getting the prices
         if not get:
@@ -95,22 +115,59 @@ with open(prev_watchlist, 'r+') as f:
 
         # if get is True, it will append to the write_list
         else:
+            count += 1
             tick = ''
             line = line.strip()
 
             if line == 'Stocks with Positive Price and Volume Trend:':
-                tick_lst.append(line + '\n')
+                check_dict[line] = count
+                first_count = count
+                #count = 0
             elif line in check_lst:
-                tick_lst.append('\n\n' + line + '\n')
+                check_dict[line] = count
+                #count = 0
             elif line != '\n':
                 for char in line:
                     if char == '\t':
                         break
                     tick += char
-                calculations(tick)
+                tickers.append(tick)
 
 
-#print('Prefetching webpages:')
+
+
+
+#Utility function to prefetch webpages concurrently
+def pre_fetch_webpages():
+    requests_cache.install_cache('cache', backend='sqlite', expire_after=3600)
+    with concurrent.futures.ThreadPoolExecutor(max_workers=50) as executor:
+        #bar = progressbar.ProgressBar(max_value=len(tickers)-1)
+        future_to_tickers = {executor.submit(get_page_async, nd): nd for nd in tickers}
+        #foo = 0
+        #for future in concurrent.futures.as_completed(future_to_tickers):
+            #bar.update(foo)
+            #oo += 1
+
+
+def get_page_async(nd):
+    if nd is not None:
+        ticker = nd.ticker
+        url = 'https://finance.yahoo.com/quote/' + tick + '?p=' + tick
+        page = get_page(url)
+
+
+
+
+
+calc_count = 1
+print('Prefetching webpages:')
+pre_fetch_webpages()
+print('\n' + 'Checking previous watchlist:')
+for nd in tickers:
+    calc_count += 1
+    if(calculations(nd, calc_count)):
+        calc_count += 1
+
 
 
 

@@ -730,8 +730,6 @@ class Hash:
 
         while cont:
             try:
-                #client_page = uReq(url)
-                #webpage = client_page.read()
                 webpage = requests.get(url).text
                 cont = False
             except:
