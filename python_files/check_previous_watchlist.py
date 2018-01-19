@@ -160,9 +160,11 @@ def get_page_async(nd):
 
 
 calc_count = 1
-print('Prefetching webpages:')
+#print('Prefetching webpages:')
+print('Prefetching webpages')
 pre_fetch_webpages()
-print('\n' + 'Checking previous watchlist:')
+#print('\n' + 'Checking previous watchlist:')
+print('Checking previous watchlist')
 for nd in tickers:
     calc_count += 1
     if(calculations(nd, calc_count)):
