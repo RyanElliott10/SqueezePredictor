@@ -738,7 +738,6 @@ class Hash:
                 if sleep_cont > 5:
                     self.write_list.append('Something seems to be wrong with your connection\n')
 
-        #client_page.close()
         return(soup(webpage, 'html.parser'))
 
 
