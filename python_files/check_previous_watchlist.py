@@ -1,9 +1,7 @@
+# imports for BeautifulSoup
 import bs4
-
 from urllib.request import urlopen as uReq
 from bs4 import BeautifulSoup as soup
-
-# imports for BeautifulSoup
 
 import time
 import datetime
@@ -161,10 +159,8 @@ def get_page_async(nd):
 
 calc_count = 1
 #print('Prefetching webpages:')
-print('Prefetching webpages')
 pre_fetch_webpages()
 #print('\n' + 'Checking previous watchlist:')
-print('Checking previous watchlist')
 for nd in tickers:
     calc_count += 1
     if(calculations(nd, calc_count)):
