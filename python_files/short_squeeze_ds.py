@@ -275,8 +275,9 @@ class Hash:
 
                 # gets the current price
                 try:
-                    nd.curr_price = float(page.findAll('span')[9].text)
+                    nd.curr_price = float(page.findAll('span')[10].text)
                 except:
+                    print("Couldn't find: ", ticker)
                     not_lst.append(ticker)
                     cont = False
 
@@ -342,7 +343,10 @@ class Hash:
     def check_watchlist(self):
         """ Further screens the watchlist. Calls functions that call other functions. """
 
-        bar = progressbar.ProgressBar(max_value=len(self.watchlist)-1)
+        if len(self.watchlist) > 0:
+            bar = progressbar.ProgressBar(max_value=len(self.watchlist)-1)
+        else:
+            bar = progressbar.ProgressBar(max_value=0)
         foo = 0
         for nd in self.watchlist:
             bar.update(foo)
@@ -375,7 +379,7 @@ class Hash:
                 append_dict[nd.ticker] = nd.shorts_percent_float
         append_dict = sorted(append_dict.items(), key=operator.itemgetter(1), reverse=True)
         for val in append_dict:
-            self.write_list.append(str(str(val[0])+ '\t' + str(val[1]) + '%\n'))
+            self.write_list.append(str(str(val[0])+ '\t' + str(val[1]) + '\n'))
 
 
 
@@ -393,7 +397,7 @@ class Hash:
 
 
         append_dict = {}
-        self.write_list.append('\n\n\nPossible Great Stocks (4 Day Price Uptrend):\n')
+        self.write_list.append('\n\n\nPossible Great Stocks (Short Pain, 4 Day Price Uptrend):\n')
         for nd in self.watchlist:
             nd_trues = 0
             if nd.high_beta:
@@ -409,7 +413,7 @@ class Hash:
                 append_dict[nd] = nd.shorts_pain
         append_dict = sorted(append_dict.items(), key=operator.itemgetter(1), reverse=True)
         for val in append_dict:
-            self.write_list.append(str(str(val[0].ticker) + '\t' + str(self.alt_price_uptrend(val[0])) + '\n'))
+            self.write_list.append(str(str(val[0].ticker) + '\t' + str(val[1])) + '\t\t' + str(self.alt_price_uptrend(val[0])) + '\n')
         temp_dict = append_dict
 
 
