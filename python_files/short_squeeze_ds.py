@@ -277,9 +277,24 @@ class Hash:
                 try:
                     nd.curr_price = float(page.findAll('span')[10].text)
                 except:
-                    print("Couldn't find: ", ticker)
-                    not_lst.append(ticker)
-                    cont = False
+                    try:
+                        count = 0
+                        while type(curr) is not bs4.BeautifulSoup and count < 5:
+                            client_page = uReq(url)
+                            webpage = client_page.read()
+
+                            client_page.close()
+                            page = soup(webpage, 'html.parser')
+
+                            curr = page.encode(sys.stdout.encoding, errors='backslashreplace').decode('utf-8')
+                            curr = soup(curr, 'html.parser')
+                            count += 1
+                        if count >= 5:
+                            raise ValueError('A very specific bad thing happened.')
+                    except:
+                        print("Couldn't find: ", ticker)
+                        not_lst.append(ticker)
+                        cont = False
 
 
                 if cont:
