@@ -16,6 +16,7 @@ from yahoo_finance import Share
 import datetime
 import time
 
+import sys
 
 import bs4
 
@@ -25,7 +26,7 @@ from bs4 import BeautifulSoup as soup
 
 
 
-string = 'NOG	6.198'
+string = 'XIV'
 string.strip()
 
 tick = ''
@@ -34,64 +35,47 @@ for char in string:
         break
     tick += char
 
-print(tick)
-
 """for char in string:
     print(repr(char))"""
 
 
-url = 'https://finance.yahoo.com/quote/INSY?p=INSY'
+url = 'https://finance.yahoo.com/quote/leju?p=leju'
 
-sleep_cont = 0
-cont = True
+# while cont:
+#     try:
+#         client_page = uReq(url)
+#         webpage = client_page.read()
+#         cont = False
+#     except:
+#         sleep_cont += 1
+#         time.sleep(5)
+#         if sleep_cont > 5:
+#             self.write_list.append('Something seems to be wrong with your connection\n')
 
-while cont:
-    try:
-        client_page = uReq(url)
-        webpage = client_page.read()
-        cont = False
-    except:
-        sleep_cont += 1
-        time.sleep(5)
-        if sleep_cont > 5:
-            self.write_list.append('Something seems to be wrong with your connection\n')
+curr = ""
 
-client_page.close()
-page = soup(webpage, 'html.parser')
+while type(curr) is not bs4.BeautifulSoup:
+    client_page = uReq(url)
+    webpage = client_page.read()
 
-#curr = page.findAll('tr')[5].text[13:]
-curr = page.findAll('span')[9].text
+    client_page.close()
+    page = soup(webpage, 'html.parser')
 
-print(curr)
+    curr = page.encode(sys.stdout.encoding, errors='backslashreplace').decode('utf-8')
+    curr = soup(curr, 'html.parser')
 
-low = ''
-count = 0
-for char in curr:
-    count += 1
-    if char == ' ':
-        break
-    else:
-        low += char
-
-high = float(curr[count + 1:])
-low = float(low)
-yearly_low = False
-
-if ((high - low) / 13.38) <= 0.15:
-    yearly_low = True
-
-print(yearly_low)
+print(curr.findAll('span')[10].text)
 
 
-"""start = datetime.datetime(2017, 12, 10)
-cont = True
-while cont:
-    try:
-        df = web.DataReader('CCHI', 'yahoo', start)
-        cont = False
-    except:
-        pass
-print(df)"""
+# start = datetime.datetime(2017, 12, 10)
+# cont = True
+# while cont:
+#     try:
+#         df = web.DataReader('CCHI', 'yahoo', start)
+#         cont = False
+#     except:
+#         pass
+# print(df)
 
 
 
