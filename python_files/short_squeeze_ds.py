@@ -290,7 +290,6 @@ class Hash:
                             curr = page.encode(sys.stdout.encoding, errors='backslashreplace').decode('utf-8')
                             curr = soup(curr, 'html.parser')
                     except:
-                        print("Couldn't find: ", ticker)
                         not_lst.append(ticker)
                         cont = False
 
