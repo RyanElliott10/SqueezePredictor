@@ -39,7 +39,7 @@ for char in string:
     print(repr(char))"""
 
 
-url = 'https://finance.yahoo.com/quote/leju?p=leju'
+url = 'https://finance.yahoo.com/quote/LEJU?p=LEJU'
 
 # while cont:
 #     try:
@@ -55,16 +55,19 @@ url = 'https://finance.yahoo.com/quote/leju?p=leju'
 curr = ""
 
 while type(curr) is not bs4.BeautifulSoup:
+    print(type(curr))
     client_page = uReq(url)
     webpage = client_page.read()
 
     client_page.close()
     page = soup(webpage, 'html.parser')
 
-    curr = page.encode(sys.stdout.encoding, errors='backslashreplace').decode('utf-8')
+    # curr = page.encode(sys.stdout.encoding).decode('utf-8')#, errors='backslashreplace').decode('utf-8')
+    # curr = page.encode(sys.stdout.encoding, errors='backslashreplace').decode('utf-8')
+    curr = page.decode('utf-8')
     curr = soup(curr, 'html.parser')
 
-print(curr.findAll('span')[10].text)
+print(curr)
 
 
 # start = datetime.datetime(2017, 12, 10)

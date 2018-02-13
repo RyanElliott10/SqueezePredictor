@@ -20,6 +20,8 @@ except: #python2
     from urllib2 import urlopen as uReq
 from bs4 import BeautifulSoup as soup
 
+import sys
+
 # imports for progressbar, website prefetching
 import requests
 import progressbar
@@ -278,8 +280,7 @@ class Hash:
                     nd.curr_price = float(page.findAll('span')[10].text)
                 except:
                     try:
-                        count = 0
-                        while type(curr) is not bs4.BeautifulSoup and count < 5:
+                        while type(curr) is not bs4.BeautifulSoup:# and count < 5:
                             client_page = uReq(url)
                             webpage = client_page.read()
 
@@ -288,9 +289,6 @@ class Hash:
 
                             curr = page.encode(sys.stdout.encoding, errors='backslashreplace').decode('utf-8')
                             curr = soup(curr, 'html.parser')
-                            count += 1
-                        if count >= 5:
-                            raise ValueError('A very specific bad thing happened.')
                     except:
                         print("Couldn't find: ", ticker)
                         not_lst.append(ticker)
