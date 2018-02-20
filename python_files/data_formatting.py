@@ -40,6 +40,7 @@ class Runner:
         self.day = 29
         self.csv_file = open('sample.csv', 'w')
         self.tickers_already_searched = []
+        self.days = []
 
 
 
@@ -120,7 +121,6 @@ class Runner:
     # Idea: get each ticker from the file, and then add each to a list. Call pre_fetch_webpages, and then creates a Security object with the ticker and webpage. Obviously, create a list of these objects
     def open_watchlist(self):
         today = datetime.datetime.today()
-        print(today)
         unique_tickers = []
         count = 0
 
@@ -129,7 +129,7 @@ class Runner:
             watchlist = '../watch_lists/20' + str(self.year) + '/' + str(self.month[0]) + '/watch_lists' + '/watch_list_for_' + str(self.month[0]) + '_' + str(self.day) + '_' + str(self.year) + '.txt'
 
             if os.path.exists(watchlist):
-                print(self.day, self.month[0], self.year)
+                self.days.append(str(str(self.day) + '/' + str(self.month[0]) + '/' + str(self.year)))
                 with open(watchlist, 'r') as wfile:
                     for line in wfile:
                         t = self.parse_line(line.strip())
@@ -144,7 +144,8 @@ class Runner:
             self.update_date()
             count += 1
 
-        print('Prefetching Webpages')
+        print('Watch Lists Used:', self.days)
+        print('\nPrefetching Webpages')
         self.pre_fetch_webpages()
         print('\nWriting to CSV file')
         for tick in self.tickers_already_searched:
