@@ -38,7 +38,6 @@ class Runner:
         self.year = 17
         self.month = (12, False)
         self.day = 29
-        self.tickers_lst = []
         self.csv_file = open('sample.csv', 'w')
         self.tickers_already_searched = []
 
@@ -47,7 +46,7 @@ class Runner:
 
     def update_date(self):
 
-        # February is only self.day with 29 days (28 in Leap Year)
+        # February is only day with 29 days (28 in Leap Year)
         # Formatted as (self.month number, exactly thirty days in self.month)
         months = [(1, False), (2, False), (3, False), (4, True), (5, False), (6, True), (7, False), (8, False), (9, True), (10, False), (11, True), (12, False)]
 
@@ -70,6 +69,7 @@ class Runner:
             else:
                 self.month = months[0]
                 self.year += 1
+        # print(self.day, self.month[0], self.year)
 
 
 
@@ -98,8 +98,6 @@ class Runner:
 
 
     def parse_tr(self, string, ticker):
-        # TODO: Eventually, make a way for it to not break when there is a dividend
-
         if len(string) > 3:
             for index, thing in enumerate(string[:4]):
                 ticker.lst_of_lsts[index].append(thing.text)
@@ -111,7 +109,7 @@ class Runner:
 
     def write_to_file(self, ticker):
         writer = csv.writer(self.csv_file, dialect='excel')
-        writer.writerow([ticker.ticker, str(str(self.month[0]) + "/" + str(self.day) + "/" + str(self.year))])
+        # writer.writerow([ticker.ticker, str(str(self.month[0]) + "/" + str(self.day) + "/" + str(self.year))])
         for thing in ticker.lst_of_lsts:
             thing.reverse()
             writer.writerow(thing)
@@ -122,9 +120,12 @@ class Runner:
     # Idea: get each ticker from the file, and then add each to a list. Call pre_fetch_webpages, and then creates a Security object with the ticker and webpage. Obviously, create a list of these objects
     def open_watchlist(self):
         today = datetime.datetime.today()
+        print(today)
         unique_tickers = []
+        count = 0
 
-        while self.year != int(str(today.year)[:2]) and self.month[0] != today.month and self.day != today.day:
+        # while self.year != int(str(today.year)[:2]) and self.month[0] != today.month and self.day != today.day:
+        while count < 100:
             watchlist = '../watch_lists/20' + str(self.year) + '/' + str(self.month[0]) + '/watch_lists' + '/watch_list_for_' + str(self.month[0]) + '_' + str(self.day) + '_' + str(self.year) + '.txt'
 
             if os.path.exists(watchlist):
@@ -140,15 +141,12 @@ class Runner:
                             continue
                         elif t is not None and t not in self.tickers_already_searched and 'Shares' not in line and 'Possible' not in line:
                             self.tickers_already_searched.append(t)
-                        elif t in self.tickers_already_searched and t not in self.tickers_lst:
-                            self.tickers_lst.append(t)
-                        # elif t is not None:
-                        #     print('nothing', t)
             self.update_date()
+            count += 1
 
         print('Prefetching Webpages')
         self.pre_fetch_webpages()
-        print('Writing to CSV file')
+        print('\nWriting to CSV file')
         for tick in self.tickers_already_searched:
             self.get_data(tick)
         self.csv_file.close()
@@ -217,5 +215,4 @@ if __name__ == "__main__":
 # TODO: Write into a file the last day I left off on, then implement a way for the program to essentailly pick up from that point.
 # TODO: Add in headers that are printed to the csv file that say the day.
 
-# BUG: It appears to end early, so you gotta gix that. Stops at 1/17/18
-# BUG: In the reccent files, it takes in the first line that says "Ticker %" and printing that - needs to be fixed.
+# BUG: The while condition does not work. Right now, a counter will do the trick, but you gots to fix this.
