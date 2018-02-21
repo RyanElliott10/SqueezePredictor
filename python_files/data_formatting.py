@@ -110,7 +110,7 @@ class Runner:
 
     def write_to_file(self, ticker):
         writer = csv.writer(self.csv_file, dialect='excel')
-        # writer.writerow([ticker.ticker, str(str(self.month[0]) + "/" + str(self.day) + "/" + str(self.year))])
+        writer.writerow([ticker.ticker])
         for thing in ticker.lst_of_lsts:
             thing.reverse()
             writer.writerow(thing)
