@@ -1,0 +1,100 @@
+Possible Great Stocks (Short Pain):
+
+HMNY	-8.551
+WATT	-38.391
+OPGN	-1.684
+INSY	11.601	Watch Again
+ANTH	3.774
+AMPE	-2.864
+MRNS	-6.207
+RKDA	5.364	Watch Again
+FLDM	-4.538
+VTVT	8.094	Watch Again
+CVO	-1.099
+MSDI	-7.576
+IPI	1.062
+LODE	0.0
+VNCE	1.809
+MRAM	-2.344
+REXX	4.511
+KBSF	-16.867
+XXII	-3.78
+CCXI	7.207	Watch Again
+LGCY	13.38	Watch Again
+AXSM	-1.754
+AKTS	-3.411
+HOV	8.065	Watch Again
+CCCL	4.825
+LTEA	13.586	Watch Again
+NVIV	-6.098
+LPTH	-4.721
+ONS	3.175
+RMBL	-1.796
+CRIS	-4.11
+ZFGN	-2.737
+YUME	5.055	Watch Again
+DRAD	-2.83
+KRYS	3.953
+MCEP	-5.6
+AXAS	-1.6
+OGEN	-3.848
+CVEO	3.409
+AZRX	5.714	Watch Again
+ZKIN	-2.97
+AYTU	-0.446
+CRNT	-1.0
+SGBX	5.467	Watch Again
+CHCI	41.732	Winner
+ICCC	6.553	Watch Again
+STKS	0.844
+LIQT	0.035
+LONE	5.867	Watch Again
+ATOM	5.61	Watch Again
+CKPT	2.452
+VGZ	-1.408
+LBY	-3.713
+ALT	12.429	Watch Again
+MCF	-3.681
+KONE	-6.941
+IMMP	2.614
+
+
+The Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain):
+
+HMNY	-8.551
+WATT	-38.391
+OPGN	-1.684
+INSY	11.601	Watch Again
+GCAP	1.523
+ANTH	3.774
+AMPE	-2.864
+MRNS	-6.207
+TROV	4.167
+DAVE	0.0
+RKDA	5.364	Watch Again
+FLDM	-4.538
+CVO	-1.099
+MSDI	-7.576
+IPI	1.062
+LODE	0.0
+VNCE	1.809
+MRAM	-2.344
+REXX	4.511
+XXII	-3.78
+CCXI	7.207	Watch Again
+AKTS	-3.411
+HOV	8.065	Watch Again
+
+
+Top 10 Stocks Experiencing Greatest Pain (Short Pain):
+
+HMNY	-8.551
+WATT	-38.391
+OPGN	-1.684
+INSY	11.601	Watch Again
+GCAP	1.523
+ANTH	3.774
+AMPE	-2.864
+MRNS	-6.207
+EARS	-4.604
+TROV	4.167

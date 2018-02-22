@@ -1,0 +1,128 @@
+Stocks with Positive Price and Volume Trend:
+
+NURO	0.48
+RGLS	5.3	Watch Again
+FFHL	1.93
+SRNE	0.0
+MTBC	1.59
+AYTU	-4.22
+DELT	-5.52
+HAIR	-8.85
+ABAC	-3.44
+ITUS	0.22
+TPIV	-4.16
+PRTO	-14.04
+SEED	5.98	Watch Again
+ATEC	-2.83
+AGLE	1.69
+RXII	-3.41
+KONE	0.88
+USAU	-19.35
+IMI	-2.74
+APPS	2.44
+XBIO	8.73	Watch Again
+DNR	-0.81
+RADA	-1.06
+SIFY	-1.2
+ACST	-7.41
+YTEN	11.31	Watch Again
+STAF	-5.71
+JCS	4.49
+CRHM	-1.79
+XNY	-1.72
+BPMX	-4.75
+TIK	-4.69
+ATOS	-2.93
+RMGN	-5.42
+MOSY	-5.19
+CBAK	-3.12
+MATR	0.0
+EPIX	9.09	Watch Again
+
+
+Shares with Shorts >= 15%:
+
+ARGS	-18.75
+ATOS	-2.93
+DNR	-0.81
+MTBC	1.59
+CVO	-11.56
+METC	7.89	Watch Again
+
+
+Shares with price uptrend for 4 or more days and near 52 week low:
+
+CODA	0.64
+NCZ	-0.32
+AVGR	5.0	Watch Again
+IFON	-1.18
+NSYS	0.53
+MFV	-1.48
+DGSE	-0.03
+SVBI	0.0
+BGY	-0.59
+GNT	-1.17
+XRF	0.73
+MMT	-0.99
+GUT	-0.56
+
+
+Possible Great Stocks (Short Pain, 4 Day Price Uptrend):
+
+ATOS	-2.93
+ATEC	-2.83
+DNR	-0.81
+MTBC	1.59
+RADA	-1.06
+SRNE	0.0
+APPS	2.44
+RXII	-3.41
+DELT	-5.52
+YTEN	11.31	Watch Again
+HAIR	-8.85
+AGLE	1.69
+FFHL	1.93
+ACST	-7.41
+AYTU	-4.22
+PRTO	-14.04
+TPIV	-4.16
+CBAK	-3.12
+XBIO	8.73	Watch Again
+RMGN	-5.42
+JCS	4.49
+IMI	-2.74
+EPIX	9.09	Watch Again
+ABAC	-3.44
+KONE	0.88
+SIFY	-1.2
+XNY	-1.72
+
+
+The Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain, 4 Day Price Uptrend):
+
+ATOS	-2.93
+BPMX	-4.75
+ATEC	-2.83
+NURO	0.48
+DNR	-0.81
+MTBC	1.59
+RADA	-1.06
+USAU	-19.35
+MOSY	-5.19
+APPS	2.44
+RXII	-3.41
+ITUS	0.22
+
+
+Top 10 Stocks Experiencing Greatest Pain (Short Pain):
+
+ATOS	-2.93
+CVO	-11.56
+ARGS	-18.75
+METC	7.89	Watch Again
+BPMX	-4.75
+ATEC	-2.83
+NURO	0.48
+DNR	-0.81
+MTBC	1.59
+RADA	-1.06

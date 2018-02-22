@@ -1,0 +1,202 @@
+Stocks with Positive Price and Volume Trend:
+
+CYH	3.62
+FCEL	-1.49
+CELP	-3.11
+NOG	0.69
+MSDI	2.81
+EXXI	0.4
+YECO	-3.62
+BIOL	-5.59
+FRED	0.73
+WTI	1.67
+CPHI	-8.57
+SRNE	5.77	Watch Again
+NVCN	-7.44
+NNVC	-3.23
+DTRM	-5.26
+HHS	-0.97
+KOPN	0.58
+CYTX	-7.35
+ESNC	-11.23
+CCIH	-0.74
+HSGX	-4.79
+SYPR	7.91	Watch Again
+ONTX	1.11
+YUMA	24.43	Winner
+PED	0.29
+DWSN	2.01
+TRX	2.47
+CVO	6.6	Watch Again
+AEMD	-2.1
+RELL	2.51
+LTRX	0.89
+PKD	1.5
+OSN	38.49	Winner
+MEIP	-0.84
+PYDS	-8.4
+NLST	-2.78
+BBRG	-1.96
+SGYP	-1.24
+AMSC	12.42	Watch Again
+CNIT	-0.33
+SMSI	7.03	Watch Again
+FTK	0.85
+LINC	-2.84
+ZSAN	-7.89
+ULBI	2.14
+CCLP	15.7	Winner
+CNET	-24.76
+CHNR	-5.24
+AGLE	4.33
+CLD	0.91
+CJJD	-2.0
+JMEI	-6.09
+PFNX	-4.17
+IPI	-2.48
+VTNR	1.94
+PFMT	18.46	Winner
+EGAN	-2.56
+GSVC	3.12
+NERV	3.31
+TAT	-1.57
+JAGX	-3.05
+CPAH	11.37	Watch Again
+EYEG	-2.69
+EVEP	11.71	Watch Again
+CUR	-2.4
+LGCY	0.98
+FSNN	0.25
+TIK	5.08	Watch Again
+PXLW	-3.9
+ENSV	-0.98
+RCON	16.78	Winner
+TMQ	-2.6
+FOMX	10.93	Watch Again
+SGOC	-2.05
+
+
+Shares with Shorts >= 15%:
+
+FRED	0.73
+CYH	3.62
+SGYP	-1.24
+SN	2.57
+ICON	16.39	Winner
+FTK	0.85
+DXLG	-4.0
+AREX	-0.51
+CVO	6.6	Watch Again
+AEMD	-2.1
+
+
+Shares with price uptrend for 4 or more days:
+
+GORO	3.79
+SSC	6.2	Watch Again
+OTIC	-4.1
+MBVX	-8.53
+IDRA	4.18
+CALI	4.5
+EYEG	-2.69
+SN	2.57
+ICD	3.37
+
+
+Possible Great Stocks (Short Pain, 4 Day Price Uptrend):
+
+CYH	3.62
+FRED	0.73
+AEMD	-2.1
+NOG	0.69
+FTK	0.85
+CVO	6.6	Watch Again
+CYTX	-7.35
+AMSC	12.42	Watch Again
+EXXI	0.4
+NERV	3.31
+ZSAN	-7.89
+FCEL	-1.49
+CCLP	15.7	Winner
+FSNN	0.25
+WTI	1.67
+YUMA	24.43	Winner
+IPI	-2.48
+FOMX	10.93	Watch Again
+EYEG	-2.69
+ONTX	1.11
+JAGX	-3.05
+MSDI	2.81
+CLD	0.91
+PXLW	-3.9
+SRNE	5.77	Watch Again
+PED	0.29
+VTNR	1.94
+AGLE	4.33
+YECO	-3.62
+LGCY	0.98
+GSVC	3.12
+PYDS	-8.4
+RCON	16.78	Winner
+CNIT	-0.33
+SGOC	-2.05
+EVEP	11.71	Watch Again
+PFMT	18.46	Winner
+ENSV	-0.98
+DTRM	-5.26
+PFNX	-4.17
+CPHI	-8.57
+CELP	-3.11
+LINC	-2.84
+CHNR	-5.24
+CJJD	-2.0
+MEIP	-0.84
+HSGX	-4.79
+TAT	-1.57
+CPAH	11.37	Watch Again
+JMEI	-6.09
+
+
+The Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain, 4 Day Price Uptrend):
+
+CYH	3.62
+FRED	0.73
+AEMD	-2.1
+SGYP	-1.24
+NOG	0.69
+FTK	0.85
+CVO	6.6	Watch Again
+CYTX	-7.35
+BBRG	-1.96
+AMSC	12.42	Watch Again
+EXXI	0.4
+NERV	3.31
+ZSAN	-7.89
+FCEL	-1.49
+FSNN	0.25
+WTI	1.67
+YUMA	24.43	Winner
+CUR	-2.4
+KOPN	0.58
+IPI	-2.48
+FOMX	10.93	Watch Again
+EYEG	-2.69
+ONTX	1.11
+JAGX	-3.05
+MSDI	2.81
+NLST	-2.78
+CLD	0.91
+
+
+Top 10 Stocks Experiencing Greatest Pain (Short Pain):
+
+CYH	3.62
+FRED	0.73
+DXLG	-4.0
+ICON	16.39	Winner
+AEMD	-2.1
+AREX	-0.51
+SGYP	-1.24
+NOG	0.69
+FTK	0.85
+CVO	6.6	Watch Again

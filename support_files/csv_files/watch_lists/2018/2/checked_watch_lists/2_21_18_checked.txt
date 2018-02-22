@@ -1,0 +1,64 @@
+Stocks with Positive Price and Volume Trend:
+
+USEG	-4.62
+NDLS	-0.73
+TURN	0.53
+REXX	-4.72
+SBOT	-4.76
+SITO	-3.05
+ONTX	2.46
+NDLS	-0.73
+TRXC	10.07	Watch Again
+SQBG	2.14
+
+
+Shares with Shorts >= 15%:
+
+PEIX	1.15
+HGT	3.42
+KONA	2.5
+NMM	-1.03
+NTZ	1.29
+SYPR	0.0
+
+
+Shares with price uptrend for 4 or more days and near 52 week low:
+
+FRSX	-3.05
+FGB	-0.32
+PHK	-0.27
+ABAC	3.6
+MHLD	0.0
+BKEP	-1.94
+NRO	-1.92
+REFR	-3.12
+PGNX	-2.5
+IRR	-1.97
+VBIV	1.06
+ELGX	-2.08
+SUMR	-0.85
+REXX	-4.72
+USEG	-4.62
+ONTX	2.46
+NDLS	-0.73
+SITO	-3.05
+REXX	-4.72
+USEG	-4.62
+NDLS	-0.73
+DPW	-11.44
+
+
+Possible Great Stocks (Short Pain, 4 Day Price Uptrend):
+
+SQBG	2.14
+SITO	-3.05
+TRXC	10.07	Watch Again
+GNUS	0.39
+REXX	-4.72
+CYTR	-1.85
+
+
+The Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain, 4 Day Price Uptrend):
+
+USEG	-4.62
+NIHD	-0.82

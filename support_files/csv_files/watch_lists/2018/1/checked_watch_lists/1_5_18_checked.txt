@@ -1,0 +1,160 @@
+
+
+Stocks with Positive Price and Volume Trend:
+
+AST	2.041
+ONP	0.719
+TRXC	-4.63
+NCTY	8.188	Watch Again
+MRDN	0.0
+IDSY	-2.517
+MYSZ	67.677	Winner
+DNN	-3.937
+FRO	-1.562
+AFMD	-6.667
+NURO	6.286	Watch Again
+RLJE	1.013
+JRJR	-4.467
+BSPM	4.975
+SMIT	3.103
+TROV	7.105	Watch Again
+EFOI	8.609	Watch Again
+AEHR	2.54
+GEVO	-8.571
+CBAY	2.866
+CCIH	13.808	Watch Again
+HSGX	-0.893
+CTIB	2.564
+TOPS	-6.573
+UAMY	0.0
+YUMA	-0.807
+SDR	-2.913
+AVXL	9.206	Watch Again
+AVGR	0.402
+TRX	-9.294
+UUU	-5.714
+SGRP	9.836	Watch Again
+AEMD	-1.887
+WSTL	-4.634
+SNDE	4.28
+BTX	-1.569
+SND	10.121	Watch Again
+ARLZ	5.952	Watch Again
+HOS	-4.304
+PTX	1.107
+ATNM	0.0
+LINU	-8.122
+CASM	47.297	Winner
+RETO	11.573	Watch Again
+CNIT	27.723	Winner
+MCF	0.369
+LITB	5.085	Watch Again
+VNRX	0.993
+NFEC	-7.874
+CEI	-3.846
+IBIO	2.179
+EGLT	-5.263
+SYN	-7.862
+ARCW	13.043	Watch Again
+AMCN	7.692	Watch Again
+SQNS	-17.131
+AUMN	8.531	Watch Again
+VBLT	-3.636
+IVAC	-0.73
+TGB	0.481
+NVLN	3.947
+NTEC	2.92
+MCEP	0.606
+VSI	15.217	Winner
+HTGM	-13.896
+GLOW	-2.861
+NRT	7.037	Watch Again
+CJJD	9.098	Watch Again
+CCCR	-1.13
+ICAD	-2.513
+APHB	-3.521
+KONE	5.611	Watch Again
+JMEI	-6.218
+PES	-6.579
+SDT	-1.39
+VTNR	1.053
+LYTS	6.296	Watch Again
+NTIP	1.215
+GIGM	8.434	Watch Again
+FNJN	5.24	Watch Again
+GSVC	0.147
+RKDA	8.192	Watch Again
+KMPH	-1.02
+SB	2.26
+EVEP	0.647
+MTSL	-1.786
+APEN	-2.121
+NM	-3.704
+IDXG	-0.885
+RNN	-2.283
+SALM	6.024	Watch Again
+ZDGE	-4.097
+CCXI	-2.086
+RSYS	16.346	Winner
+EMES	-2.558
+BUR	-12.079
+BURG	14.65	Watch Again
+NVIV	-3.987
+NEPT	-2.28
+CRMD	-2.869
+CGA	11.16	Watch Again
+ENSV	1.736
+RCON	-11.905
+PAVM	1.132
+JMU	-5.833
+DSS	-1.442
+IZEA	6.884	Watch Again
+MNGA	-5.398
+MATR	0.0
+FOMX	-5.422
+SGOC	-3.571
+ZX	13.534	Watch Again
+
+
+Shares with Shorts >= 15%:
+
+HTGM	-13.896
+AEMD	-1.887
+ICON	7.563	Watch Again
+SND	10.121	Watch Again
+VSI	15.217	Winner
+IDXG	-0.885
+EGLT	-5.263
+PTIE	8.029	Watch Again
+ADRO	-1.603
+TRXC	-4.63
+
+
+Possible Great Stocks (Short Pain, Within 15% of 52 Week Low):
+
+SB	2.26
+UAMY	0.0
+NCTY	8.188	Watch Again
+DNN	-3.937
+SNDE	4.28
+RETO	11.573	Watch Again
+MCF	0.369
+LITB	5.085	Watch Again
+CEI	-3.846
+SYN	-7.862
+SQNS	-17.131
+TGB	0.481
+KONE	5.611	Watch Again
+JMEI	-6.218
+SDT	-1.39
+GSVC	0.147
+NM	-3.704
+JMU	-5.833
+
+
+The Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain, Within 15% of 52 Week Low):
+
+
+
+Top 10 Stocks Experiencing Greatest Pain (Short Pain, Within 15% of 52 Week Low):
+

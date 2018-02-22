@@ -1,0 +1,138 @@
+Stocks with Positive Price and Volume Trend:
+
+MYSZ	-10.9
+FCSC	-1.93
+ZAIS	-0.99
+OPGN	-10.53
+SRNE	22.22	Winner
+AXU	-1.2
+GIM	0.15
+AYTU	12.46	Watch Again
+HEB	-12.92
+KZIA	7.44	Watch Again
+SSNT	-1.81
+NTN	-5.7
+BDR	-6.36
+PLG	-1.96
+SNES	-9.06
+ITUS	10.86	Watch Again
+TPIV	5.48	Watch Again
+XBIT	9.62	Watch Again
+BXE	-4.29
+MBVX	-6.05
+SEED	17.0	Winner
+NFEC	7.96	Watch Again
+AMCN	-2.26
+NNDM	16.25	Winner
+JOB	2.93
+AKG	-1.36
+SDPI	-0.01
+RXII	10.09	Watch Again
+ISIG	2.22
+NERV	4.8
+RKDA	-3.08
+MDGS	-1.84
+CRIS	-5.26
+BYFC	8.81	Watch Again
+KIQ	2.7
+ABCD	3.35
+BPMX	15.83	Winner
+TIK	4.99
+RAVE	-2.69
+CTIC	-2.29
+MNGA	-19.43
+AKER	42.86	Winner
+SPI	-17.31
+
+
+Shares with Shorts >= 15%:
+
+OPGN	-10.53
+TUES	4.62
+BLPH	0.47
+XBIT	9.62	Watch Again
+PACB	3.02
+AVID	-5.51
+
+
+Shares with price uptrend for 4 or more days:
+
+FRD	-0.9
+AXU	-1.2
+NCZ	0.32
+GIM	0.15
+PLG	-1.96
+OSN	-1.75
+SMED	1.25
+KDMN	2.51
+ROYT	0.8
+PFMT	-2.07
+NERV	4.8
+MN	2.53
+CMCL	-1.19
+ABCD	3.35
+TIK	4.99
+RAVE	-2.69
+CTIC	-2.29
+NSL	0.0
+
+
+Possible Great Stocks (Short Pain, 4 Day Price Uptrend):
+
+OPGN	-10.53
+XBIT	9.62	Watch Again
+SNES	-9.06
+FCSC	-1.93
+MYSZ	-10.9
+SRNE	22.22	Winner
+NERV	4.8
+MNGA	-19.43
+RXII	10.09	Watch Again
+RKDA	-3.08
+CRIS	-5.26
+ZAIS	-0.99
+MBVX	-6.05
+AYTU	12.46	Watch Again
+SDPI	-0.01
+SPI	-17.31
+BDR	-6.36
+ISIG	2.22
+TPIV	5.48	Watch Again
+JOB	2.93
+BYFC	8.81	Watch Again
+GIM	0.15
+KZIA	7.44	Watch Again
+PLG	-1.96
+BXE	-4.29
+NNDM	16.25	Winner
+MDGS	-1.84
+KIQ	2.7
+
+
+The Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain, 4 Day Price Uptrend):
+
+OPGN	-10.53
+XBIT	9.62	Watch Again
+SNES	-9.06
+ITUS	10.86	Watch Again
+AKER	42.86	Winner
+FCSC	-1.93
+BPMX	15.83	Winner
+NERV	4.8
+MNGA	-19.43
+RXII	10.09	Watch Again
+RKDA	-3.08
+
+
+Top 10 Stocks Experiencing Greatest Pain (Short Pain):
+
+OPGN	-10.53
+INPX	16.86	Winner
+TUES	4.62
+NSPR	-7.26
+XBIT	9.62	Watch Again
+RAS	7.13	Watch Again
+BLPH	0.47
+CATS	0.21
+AVID	-5.51
+SNES	-9.06

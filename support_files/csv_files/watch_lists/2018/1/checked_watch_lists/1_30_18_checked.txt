@@ -1,0 +1,101 @@
+Stocks with Positive Price and Volume Trend:
+
+VSTM	5.59	Watch Again
+ADVM	5.3	Watch Again
+CODA	-2.95
+QUIK	-1.4
+ANFI	-1.87
+INSG	6.4	Watch Again
+HAIR	-0.56
+BRQS	1.17
+RUN	0.15
+BIOA	-3.59
+RDHL	-2.92
+NDRA	15.65	Winner
+CFRX	4.8
+APHB	-9.02
+USAU	2.2
+FATE	6.12	Watch Again
+SDT	-1.14
+CASC	5.36	Watch Again
+CPAH	-6.65
+BLDP	20.27	Winner
+IMMR	7.4	Watch Again
+TIK	-3.33
+GERN	7.66	Watch Again
+CRMD	-4.4
+CHFS	-4.66
+CTEK	-0.18
+
+
+Shares with Shorts >= 15%:
+
+CHFS	-4.66
+RUN	0.15
+ATOS	28.57	Winner
+OCUL	5.75	Watch Again
+GERN	7.66	Watch Again
+APRI	-4.35
+CVO	-1.63
+ONVO	1.45
+AEMD	-10.98
+ANFI	-1.87
+
+
+Shares with price uptrend for 4 or more days and near 52 week low:
+
+AXR	2.05
+SSNT	-0.99
+SMED	-1.94
+
+
+Possible Great Stocks (4 Day Price Uptrend):
+
+IMMR	7.4	Watch Again
+GERN	7.66	Watch Again
+APHB	-9.02
+CHFS	-4.66
+RUN	0.15
+CASC	5.36	Watch Again
+QUIK	-1.4
+VSTM	5.59	Watch Again
+FATE	6.12	Watch Again
+CRMD	-4.4
+HAIR	-0.56
+ADVM	5.3	Watch Again
+CPAH	-6.65
+CODA	-2.95
+BRQS	1.17
+BIOA	-3.59
+NDRA	15.65	Winner
+SDT	-1.14
+BLDP	20.27	Winner
+
+
+The Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain, 4 Day Price Uptrend):
+
+IMMR	7.4	Watch Again
+GERN	7.66	Watch Again
+APHB	-9.02
+CHFS	-4.66
+RUN	0.15
+ANFI	-1.87
+CASC	5.36	Watch Again
+INSG	6.4	Watch Again
+QUIK	-1.4
+CRMD	-4.4
+USAU	2.2
+
+
+Top 10 Stocks Experiencing Greatest Pain (Short Pain):
+
+ATOS	28.57	Winner
+CVO	-1.63
+IMMR	7.4	Watch Again
+GERN	7.66	Watch Again
+AEMD	-10.98
+APHB	-9.02
+CYTX	0.0
+APRI	-4.35
+OCUL	5.75	Watch Again
+CHFS	-4.66

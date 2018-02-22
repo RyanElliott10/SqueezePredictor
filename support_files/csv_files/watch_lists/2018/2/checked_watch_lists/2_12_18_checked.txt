@@ -1,0 +1,56 @@
+Stocks with Positive Price and Volume Trend:
+
+APTO	2.53
+CTHR	1.45
+BSPM	-1.28
+XENE	7.14	Watch Again
+FLDM	3.95
+NPTN	-3.26
+HLIT	1.56
+SYPR	-0.71
+
+
+Shares with Shorts >= 15%:
+
+SPWR	0.58
+DELT	2.7
+LPCN	4.88
+FRSX	3.16
+
+
+Shares with price uptrend for 4 or more days and near 52 week low:
+
+SSNT	-0.79
+MXWL	1.3
+OCSL	-0.23
+OAKS	0.94
+IGD	1.09
+BRG	0.41
+NPTN	-3.26
+NYRT	-1.01
+MDLY	-0.8
+CLSD	-0.35
+HMHC	1.37
+WMIH	3.38
+ORN	-0.46
+EMKR	0.0
+SREV	3.77
+BSPM	-1.28
+XENE	7.14	Watch Again
+CTHR	1.45
+FLDM	3.95
+BSPM	-1.28
+NPTN	-3.26
+BSPM	-1.28
+XENE	7.14	Watch Again
+APTO	2.53
+
+
+Possible Great Stocks (Short Pain, 4 Day Price Uptrend):
+
+IOTS	2.33
+HMHC	1.37
+ROSE	8.03	Watch Again
+FLKS	-1.44
+HGSH	-2.78
+MXWL	1.3

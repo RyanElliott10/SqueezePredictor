@@ -1,0 +1,186 @@
+Stocks with Positive Price and Volume Trend:
+
+FCEL	8.65	Watch Again
+CNTY	6.97	Watch Again
+NCTY	32.46	Winner
+SSC	3.21
+RGLS	2.54
+BIOL	8.16	Watch Again
+SBOT	-1.08
+VRAY	5.2	Watch Again
+HSGX	11.45	Watch Again
+NHLD	-26.42
+UAN	-2.41
+VCEL	0.0
+PRGX	-0.63
+AMRC	0.58
+COGT	-11.01
+SHLD	0.91
+TSRI	2.86
+INUV	0.96
+SSNT	-1.19
+PLG	29.26	Winner
+BORN	0.68
+ITUS	0.0
+LEDS	-26.56
+AMRH	-16.67
+HOS	6.78	Watch Again
+ACHV	12.32	Watch Again
+GALT	3.77
+MHLD	-0.66
+OPHC	-0.6
+MBVX	4.26
+DGSE	-0.82
+KODK	22.06	Winner
+CNIT	16.28	Winner
+MUX	-0.21
+BLRX	0.84
+CLDC	-5.83
+SHOS	4.0
+CLIR	-1.72
+ARCI	-2.97
+DPW	3.7
+XXII	5.25	Watch Again
+HTGM	10.09	Watch Again
+CALI	4.42
+BMRA	-3.21
+TLRA	3.67
+FH	9.35	Watch Again
+LYL	-1.57
+CPAH	14.34	Watch Again
+SIFY	-5.66
+JTPY	0.0
+ARQL	-1.09
+STAF	-4.56
+VOXX	-2.31
+RSYS	0.0
+DRRX	-0.8
+ICD	3.94
+EMES	2.24
+LGCY	8.47	Watch Again
+APRI	2.99
+TTOO	6.07	Watch Again
+NEPT	17.63	Winner
+SSKN	-3.33
+TRIB	-3.73
+PAVM	-9.45
+DSS	-5.29
+MFIN	15.7	Winner
+GENE	-3.64
+IMMY	1.67
+NVAX	-6.6
+
+
+Shares with Shorts >= 15%:
+
+SHLD	0.91
+HMNY	-12.1
+TNDM	-2.33
+SHOS	4.0
+FRSH	4.22
+AMRS	-5.92
+VRAY	5.2	Watch Again
+MFIN	15.7	Winner
+HTGM	10.09	Watch Again
+MUX	-0.21
+APRI	2.99
+KODK	22.06	Winner
+OPTT	2.61
+
+
+Shares with price uptrend for 4 or more days:
+
+HEB	0.0
+WRLS	0.31
+CDXS	0.0
+ITUS	0.0
+CSSE	-3.75
+THST	3.48
+SSKN	-3.33
+
+
+Possible Great Stocks (Short Pain, 4 Day Price Uptrend):
+
+NVAX	-6.6
+MFIN	15.7	Winner
+LEDS	-26.56
+DPW	3.52
+VRAY	5.2	Watch Again
+MUX	-0.21
+HTGM	10.09	Watch Again
+CALI	4.42
+MHLD	-0.66
+FCEL	8.65	Watch Again
+HOS	6.78	Watch Again
+TTOO	6.07	Watch Again
+EMES	2.24
+XXII	5.41	Watch Again
+GALT	3.77
+IMMY	1.67
+MBVX	4.26
+DRRX	-0.8
+LGCY	8.47	Watch Again
+VCEL	0.0
+ICD	3.94
+AMRC	0.58
+RSYS	0.0
+ARQL	-1.09
+TLRA	3.67
+UAN	-2.41
+CNIT	16.28	Winner
+ACHV	12.32	Watch Again
+DSS	-5.29
+PAVM	-9.45
+PRGX	-0.63
+OPHC	-0.6
+HSGX	11.45	Watch Again
+CPAH	14.34	Watch Again
+LYL	-1.57
+NCTY	32.46	Winner
+SSC	3.21
+PLG	29.26	Winner
+AMRH	-16.67
+SIFY	-5.66
+TRIB	-3.73
+GENE	-3.64
+
+
+The Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain, 4 Day Price Uptrend):
+
+KODK	22.06	Winner
+NVAX	-6.6
+MFIN	15.7	Winner
+LEDS	-26.56
+DPW	3.52
+SHOS	4.0
+SHLD	0.91
+VRAY	5.2	Watch Again
+APRI	2.99
+MUX	-0.21
+HTGM	10.09	Watch Again
+CALI	4.42
+MHLD	-0.66
+COGT	-11.01
+FCEL	8.65	Watch Again
+HOS	6.78	Watch Again
+TTOO	6.07	Watch Again
+EMES	2.24
+XXII	5.25	Watch Again
+IMMY	1.67
+CLIR	-1.72
+ITUS	0.0
+SSKN	-3.33
+
+
+Top 10 Stocks Experiencing Greatest Pain (Short Pain):
+
+HMNY	-12.1
+KODK	22.06	Winner
+NVAX	-6.6
+TNDM	-2.33
+MFIN	15.7	Winner
+LEDS	-26.56
+DPW	3.52
+SHOS	4.0
+SHLD	0.91
+IZEA	-10.24

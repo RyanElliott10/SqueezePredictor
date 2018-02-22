@@ -1,0 +1,83 @@
+Stocks with Positive Price and Volume Trend:
+
+CYH	-2.49
+INTX	-5.0
+CTXR	-1.06
+AQMS	-7.67
+FRD	-6.25
+DHX	-5.56
+ADMP	-2.34
+MXWL	-1.51
+CYAN	0.4
+WILC	-1.14
+ABAC	3.26
+CATB	-2.5
+NAUH	-0.85
+EMKR	-1.34
+REFR	2.08
+CLUB	-3.97
+CYH	-2.49
+AQMS	-7.67
+SNCR	-3.43
+
+
+Shares with Shorts >= 15%:
+
+ORC	-2.49
+KNDI	-6.09
+PEIX	2.35
+NNVC	-3.24
+HIX	-0.3
+JMM	0.0
+HIO	0.0
+OAKS	0.0
+
+
+Shares with price uptrend for 4 or more days and near 52 week low:
+
+LOAN	-0.04
+HMHC	-0.67
+NRO	0.21
+OSG	-1.95
+ORC	-2.49
+JE	-1.0
+PGNX	0.34
+IRR	0.33
+CDTX	-3.6
+KTCC	-1.11
+VBIV	0.27
+ELGX	0.23
+SUMR	1.71
+NOVN	-1.74
+AQMS	-7.67
+CYH	-2.49
+DHX	-5.56
+CATB	-2.5
+CLUB	-3.97
+CYAN	0.4
+ABAC	3.26
+AQMS	-7.67
+CYH	-2.49
+
+
+Possible Great Stocks (Short Pain, 4 Day Price Uptrend):
+
+CTXR	-1.06
+ADMP	-2.34
+INTX	-5.0
+DHX	-5.56
+MXWL	-1.51
+SNCR	-3.43
+AQMS	-7.67
+CYH	-2.49
+CTXR	-1.06
+ADMP	-2.34
+
+
+The Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain, 4 Day Price Uptrend):
+
+CERC	-3.96
+KNDI	-6.09
+NOG	-2.63
+INTX	-5.0
+CSLT	-7.79

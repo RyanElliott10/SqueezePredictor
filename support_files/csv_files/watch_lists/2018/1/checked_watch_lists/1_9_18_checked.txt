@@ -1,0 +1,160 @@
+
+
+Stocks with Positive Price and Volume Trend:
+
+NOG	-2.72
+MYSZ	-39.86
+DFBG	8.18	Watch Again
+ATHX	2.09
+OPGN	-9.48
+JNP	6.03	Watch Again
+LONE	15.81	Winner
+ALJJ	-2.54
+SBOT	-2.17
+HGSH	3.83
+FLKS	-4.13
+AVGR	5.0	Watch Again
+BBX	2.15
+DELT	-16.24
+DWSN	10.09	Watch Again
+LPCN	1.17
+COGT	0.99
+CERS	10.16	Watch Again
+INSG	-5.78
+TRX	-2.39
+BDR	0.27
+TRPX	-3.24
+CANF	15.06	Winner
+BTX	-1.09
+DYNT	-1.54
+GALT	14.49	Watch Again
+STKL	-1.72
+LITB	-11.74
+ATEC	10.0	Watch Again
+INS	1.45
+PME	-2.36
+BPI	-3.02
+CGG	24.8	Winner
+LEVB	-3.62
+ISR	2.33
+LEJU	-0.6
+MCEP	11.36	Watch Again
+XXII	-6.51
+CCCR	-7.0
+CPSH	-9.04
+MIND	7.51	Watch Again
+FH	9.35	Watch Again
+LYL	-1.18
+SBBP	-1.22
+KMPH	-4.9
+IGC	-2.65
+MDGS	4.7
+EMAN	-3.14
+CPAH	7.93	Watch Again
+NM	-3.5
+EMES	1.97
+VUZI	1.74
+MTNB	-3.79
+PLM	-5.36
+XRM	-1.46
+KOSS	0.48
+TMQ	-5.52
+MOSY	2.86
+MBII	-3.82
+RVP	-9.33
+
+
+Shares with Shorts >= 15%:
+
+CHFS	-10.84
+VUZI	1.74
+OPGN	-9.48
+HDSN	-0.96
+NH	8.03	Watch Again
+
+
+Shares with price uptrend for 4 or more days:
+
+XIN	-0.13
+DFBG	8.18	Watch Again
+BIOL	4.87
+DYNT	-1.54
+THST	1.49
+NH	8.03	Watch Again
+CPAH	7.93	Watch Again
+DXR	3.77
+
+
+Possible Great Stocks (Short Pain, 4 Day Price Uptrend):
+
+OPGN	-9.48
+MYSZ	-39.86
+ATEC	10.0	Watch Again
+LPCN	1.17
+CERS	10.16	Watch Again
+EMES	2.03
+NOG	-2.72
+BTX	-1.09
+GALT	14.49	Watch Again
+BPI	-3.02
+XXII	-6.51
+DELT	-16.24
+FLKS	-4.13
+MTNB	-3.79
+SBBP	-1.22
+PLM	-5.36
+IGC	-2.65
+STKL	-1.72
+KMPH	-4.9
+HGSH	3.83
+BDR	0.27
+MCEP	11.36	Watch Again
+PME	-2.36
+ISR	2.33
+LONE	15.81	Winner
+ALJJ	-2.54
+MIND	7.51	Watch Again
+LYL	-1.18
+BBX	2.15
+DFBG	8.18	Watch Again
+CPAH	7.93	Watch Again
+LITB	-11.74
+CGG	24.8	Winner
+LEVB	-3.62
+LEJU	-0.6
+MDGS	4.7
+NM	-3.85
+
+
+The Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain, 4 Day Price Uptrend):
+
+OPGN	-9.48
+VUZI	1.74
+ATEC	10.0	Watch Again
+INSG	-5.78
+MBII	-3.82
+LPCN	1.17
+CERS	10.16	Watch Again
+AVGR	5.11	Watch Again
+COGT	0.99
+EMES	1.97
+NOG	-2.72
+BTX	-1.09
+MOSY	2.86
+BPI	-3.02
+XXII	-6.51
+ATHX	2.09
+
+
+Top 10 Stocks Experiencing Greatest Pain (Short Pain):
+
+NSPR	111.52	Winner
+APHB	-20.32
+CHFS	-10.84
+NIHD	52.35	Winner
+OPGN	-9.48
+MYSZ	-39.86
+VUZI	1.74
+ATEC	10.0	Watch Again
+AMSC	-0.61
+INSG	-5.78
