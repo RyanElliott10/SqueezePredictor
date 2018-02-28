@@ -14,6 +14,8 @@ import progressbar
 import requests_cache
 import concurrent.futures
 
+import sqlite3
+
 import os.path
 
 
@@ -41,7 +43,8 @@ class Runner:
         self.csv_file = open('sample.csv', 'w')
         self.tickers_already_searched = []
         self.days = []
-
+        self.conn = sqlite3.connect("test_db")
+        self.curs = self.conn.cursor()
 
 
 
@@ -70,8 +73,6 @@ class Runner:
             else:
                 self.month = months[0]
                 self.year += 1
-        # print(self.day, self.month[0], self.year)
-
 
 
 
@@ -85,26 +86,23 @@ class Runner:
 
 
 
-
     def get_data(self, ticker):
         # This will only go back 100 trading days!
         tr_lst = ticker.page.findAll('tr', {'class':'BdT Bdc($c-fuji-grey-c) Ta(end) Fz(s) Whs(nw)'})
 
-        # This starts at index 1 because you don't want to run it during the trading day with values changing
-        for index in range(1, len(tr_lst)):
+        for index in range(len(tr_lst)):
             self.parse_tr(tr_lst[index].findAll('span'), ticker)
         self.write_to_file(ticker)
 
 
 
-
     def parse_tr(self, string, ticker):
-        if len(string) > 3:
+        # ensures the volume is not blank (-)
+        if len(string) == 7 and string[5].text != string[6].text:
             for index, thing in enumerate(string[:4]):
                 ticker.lst_of_lsts[index].append(thing.text)
             for index, thing in enumerate(string[5:]):
                 ticker.lst_of_lsts[index+4].append(thing.text)
-
 
 
 
@@ -113,23 +111,24 @@ class Runner:
         writer.writerow([ticker.ticker])
         for thing in ticker.lst_of_lsts:
             thing.reverse()
-            writer.writerow(thing)
+            # writer.writerow(thing)
+        self.store_in_db(ticker)
 
 
 
-
-    # Idea: get each ticker from the file, and then add each to a list. Call pre_fetch_webpages, and then creates a Security object with the ticker and webpage. Obviously, create a list of these objects
     def open_watchlist(self):
         today = datetime.datetime.today()
         unique_tickers = []
         count = 0
 
-        # while self.year != int(str(today.year)[:2]) and self.month[0] != today.month and self.day != today.day:
+        self.curs.execute("CREATE TABLE IF NOT EXISTS data(ticker TEXT, date TEXT, open REAL, high REAL, low REAL, close REAL, volume INTEGER)")
+
+        # while self.year <= int(str(today.year)[2:]) and self.month[0] <= today.month and self.day <= today.day:
         while count < 100:
             watchlist = '../watch_lists/20' + str(self.year) + '/' + str(self.month[0]) + '/watch_lists' + '/watch_list_for_' + str(self.month[0]) + '_' + str(self.day) + '_' + str(self.year) + '.txt'
 
             if os.path.exists(watchlist):
-                self.days.append(str(str(self.day) + '/' + str(self.month[0]) + '/' + str(self.year)))
+                self.days.append(str(str(self.month[0]) + '/' + str(self.day) + '/' + str(self.year)))
                 with open(watchlist, 'r') as wfile:
                     for line in wfile:
                         t = self.parse_line(line.strip())
@@ -147,11 +146,13 @@ class Runner:
         print('Watch Lists Used:', self.days)
         print('\nPrefetching Webpages')
         self.pre_fetch_webpages()
-        print('\nWriting to CSV file')
+        print('\nWriting to CSV file and database')
         for tick in self.tickers_already_searched:
-            self.get_data(tick)
+            if type(tick) is not str:
+                self.get_data(tick)
         self.csv_file.close()
-
+        self.curs.close()
+        self.conn.close()
 
 
 
@@ -166,7 +167,6 @@ class Runner:
                     foo = foo-1
                 bar.update(foo+1)
                 foo += 1
-
 
 
 
@@ -203,8 +203,26 @@ class Runner:
 
 
 
+    def store_in_db(self, ticker):
+        # allows access to global variable, curs
+        db_lsts = []
+
+        for date in range(len(ticker.lst_of_lsts[0])):
+            inner_lst = []
+            for type in range(6):
+                inner_lst.append(ticker.lst_of_lsts[type][date])
+            db_lsts.append(inner_lst)
+
+        for thing in db_lsts:
+            thing
+            self.curs.execute("INSERT INTO data VALUES(?, ?, ?, ?, ?, ?, ?)", (ticker.ticker, thing[0], thing[1], thing[2], thing[3], thing[4], thing[5]))
+            self.conn.commit()
+
+
 
 def main():
+    # initializing the db, connecting, and ensuring the table (data) is already there
+
     rn = Runner()
     rn.open_watchlist()
 
@@ -214,6 +232,6 @@ if __name__ == "__main__":
 
 
 # TODO: Write into a file the last day I left off on, then implement a way for the program to essentailly pick up from that point.
-# TODO: Add in headers that are printed to the csv file that say the day.
+# TODO: Find out how to run it several times and not have it duplicate values
 
 # BUG: The while condition does not work. Right now, a counter will do the trick, but you gots to fix this.
