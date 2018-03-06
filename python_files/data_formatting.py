@@ -122,7 +122,7 @@ class Runner:
                     if index == 0:
                         lst.append(time.strftime('%Y-%m-%d', time.localtime(float(num))))
                     else:
-                        lst.append(float(num))
+                        lst.append(float(round(num, 5)))
                 except:
                     pass
                 num = ''
@@ -158,8 +158,7 @@ class Runner:
 
         # while self.year <= int(str(today.year)[2:]) and self.month[0] <= today.month and self.day <= today.day:
         while count < 100:
-            watchlist = '../watch_lists/20' + str(self.year) + '/' + str(
-                self.month[0]) + '/watch_lists' + '/watch_list_for_' + str(self.month[0]) + '_' + str(
+            watchlist = '../watch_lists/20' + str(self.year) + '/' + str(self.month[0]) + '/watch_lists' + '/watch_list_for_' + str(self.month[0]) + '_' + str(
                 self.day) + '_' + str(self.year) + '.txt'
 
             if os.path.exists(watchlist):
