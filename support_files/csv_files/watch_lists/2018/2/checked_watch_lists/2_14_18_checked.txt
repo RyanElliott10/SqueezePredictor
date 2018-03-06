@@ -1,0 +1,149 @@
+Stocks with Positive Price and Volume Trend:
+
+CAPR	4.62
+CELP	0.0
+NDLS	1.67
+JVA	2.56
+CETX	-5.11
+AQMS	-7.0
+TYHT	10.73	Watch Again
+IMUC	-5.38
+CALX	-4.55
+CRVP	0.21
+OXBR	-4.08
+SPWR	1.36
+ONTX	-5.5
+VCEL	-0.68
+QTNT	0.77
+COGT	6.35	Watch Again
+FLDM	-4.89
+AMMA	1.49
+INSE	-4.62
+XPLR	-1.59
+FAC	0.87
+CATB	-10.9
+NOA	-1.09
+MNKD	6.29	Watch Again
+ATNM	2.58
+ADOM	-2.76
+UEC	7.97	Watch Again
+IBIO	-0.78
+WMIH	4.07
+SYNC	-1.32
+NCV	0.44
+AMPE	1.82
+INVE	1.33
+STON	2.91
+APPS	5.6	Watch Again
+ELVT	-2.19
+BW	7.5	Watch Again
+SREV	-0.86
+CGEN	6.9	Watch Again
+ECT	-4.65
+FSNN	0.93
+TIK	-9.62
+ZN	1.16
+PXLW	0.57
+OCN	3.64
+TTNP	-4.55
+ERN	-1.27
+IMUC	-5.38
+AMRS	0.58
+
+
+Shares with Shorts >= 15%:
+
+MNKD	6.29	Watch Again
+AQMS	-7.0
+BW	7.5	Watch Again
+ELVT	-2.19
+ATOS	17.35	Winner
+NDLS	1.67
+SPWR	1.36
+MTBC	1.63
+CAPR	4.62
+XBIT	3.74
+FLDM	-4.89
+AEMD	3.68
+MYOS	3.41
+DNN	2.65
+DELT	4.27
+SSNT	-5.76
+GGN	2.36
+SYNC	-1.32
+GNT	2.53
+
+
+Shares with price uptrend for 4 or more days and near 52 week low:
+
+NCV	0.44
+PER	0.0
+MICR	-0.85
+DSE	0.5
+AQMS	-7.0
+ZN	1.16
+MNKD	6.29	Watch Again
+FLDM	-4.89
+CAPR	4.62
+BW	7.5	Watch Again
+SPWR	1.36
+ELVT	-2.19
+AMPE	1.82
+
+
+Possible Great Stocks (Short Pain, 4 Day Price Uptrend):
+
+ONTX	-5.5
+TTNP	-4.55
+UEC	7.97	Watch Again
+CATB	-10.9
+APPS	5.6	Watch Again
+FSNN	0.93
+CGEN	6.9	Watch Again
+VCEL	-0.68
+PXLW	0.57
+ECT	-4.65
+ATNM	2.58
+AMMA	1.49
+SREV	-0.86
+TYHT	10.73	Watch Again
+ADOM	-2.76
+TIK	-9.62
+CELP	0.0
+JVA	2.56
+CRVP	0.21
+FAC	0.87
+NCV	0.44
+AQMS	-7.0
+IMUC	-5.38
+MNKD	6.29	Watch Again
+FLDM	-4.89
+CAPR	4.62
+BW	7.5	Watch Again
+NDLS	1.67
+SPWR	1.36
+ELVT	-2.19
+QTNT	0.77
+OCN	3.64
+AMPE	1.82
+
+
+The Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain, 4 Day Price Uptrend):
+
+ONTX	-5.5
+TTNP	-4.55
+UEC	7.97	Watch Again
+COGT	6.35	Watch Again
+CETX	-5.11
+APPS	5.6	Watch Again
+FSNN	0.93
+AQMS	-7.0
+IMUC	-5.38
+ZN	1.16
+ERN	-1.27
+MNKD	6.29	Watch Again
+ATOS	17.35	Winner
+FLDM	-4.89
+CAPR	4.62
+BW	7.5	Watch Again
+WMIH	4.07

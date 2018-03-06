@@ -1,0 +1,133 @@
+Stocks with Positive Price and Volume Trend:
+
+INTX	-7.45
+APTO	6.41	Watch Again
+REXX	-7.92
+EXXI	-1.74
+VTVT	-0.4
+ADVM	6.48	Watch Again
+FORD	-3.08
+VSLR	0.0
+CERC	-9.38
+ACMR	-4.59
+ALIM	-4.1
+DWSN	-6.05
+HEB	7.27	Watch Again
+UUU	-1.39
+TSRI	-2.13
+LRAD	-2.89
+CVEO	-2.96
+KZIA	-4.87
+NTN	-6.07
+GMO	5.38	Watch Again
+GBR	-6.35
+RUN	-0.31
+GALT	-1.9
+ARGS	0.0
+FORK	0.0
+ROYT	-2.56
+IHT	1.1
+HTGM	3.08
+RVLT	-7.71
+AWX	2.13
+FATE	-8.77
+ECR	1.59
+EMAN	-15.62
+CPAH	4.75
+PLXP	0.68
+ACST	-6.4
+NK	-6.4
+CUR	-6.54
+TNXP	-7.51
+BOXL	-0.17
+CTRV	-9.96
+BVXV	-4.34
+MATR	-1.69
+AKER	-6.12
+TTNP	2.11
+
+
+Shares with Shorts >= 15%:
+
+EGLT	-5.63
+ARGS	0.0
+RUN	-0.31
+VSLR	0.0
+HTGM	3.08
+RVLT	-7.71
+OPTT	-5.65
+RGSE	-9.15
+
+
+Shares with price uptrend for 4 or more days and near 52 week low:
+
+AFMD	-1.72
+EGLT	-5.63
+THST	-4.37
+CNFR	-1.54
+JCS	0.0
+
+
+Possible Great Stocks (4 Day Price Uptrend):
+
+HTGM	3.08
+NK	-6.4
+RUN	-0.31
+CERC	-9.38
+FORD	-3.08
+REXX	-7.92
+CTRV	-9.96
+VTVT	-0.4
+EXXI	-1.74
+FATE	-8.77
+PLXP	0.68
+GALT	-1.9
+TTNP	2.11
+TNXP	-7.51
+ECR	1.59
+FORK	0.0
+ALIM	-4.1
+ACST	-6.4
+ADVM	6.48	Watch Again
+CVEO	-2.96
+ROYT	-2.56
+ACMR	-4.59
+CPAH	4.75
+KZIA	-4.87
+GMO	5.38	Watch Again
+GBR	-6.35
+BOXL	-0.17
+BVXV	-4.34
+
+
+The Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain, 4 Day Price Uptrend):
+
+RVLT	-7.71
+ARGS	0.0
+HTGM	3.08
+NK	-6.4
+RUN	-0.31
+INTX	-7.45
+VSLR	0.0
+CERC	-9.38
+FORD	-3.08
+REXX	-7.92
+CTRV	-9.96
+AKER	-6.12
+CUR	-6.54
+EXXI	-1.74
+TTNP	2.11
+
+
+Top 10 Stocks Experiencing Greatest Pain (Short Pain):
+
+RVLT	-7.71
+RGSE	-9.15
+ARGS	0.0
+HTGM	3.08
+INO	-10.54
+EGLT	-5.63
+NK	-6.4
+OPTT	-5.65
+RUN	-0.31
+INTX	-7.45

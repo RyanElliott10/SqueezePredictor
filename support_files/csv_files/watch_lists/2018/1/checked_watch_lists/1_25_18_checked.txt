@@ -1,0 +1,98 @@
+Stocks with Positive Price and Volume Trend:
+
+APTO	-6.58
+SAEX	-3.15
+MYO	9.8	Watch Again
+CMRE	4.04
+ADVM	12.17	Watch Again
+VGZ	0.62
+IPWR	-9.77
+AYTU	3.11
+USAS	-2.67
+CERS	-1.4
+GMO	1.99
+PRKR	-6.5
+ACHV	-6.44
+NLST	-10.22
+WKHS	1.26
+MUX	-6.77
+ISR	2.22
+ANTH	0.53
+THM	-1.77
+GURE	-3.75
+EMMS	1.95
+OGEN	37.32	Winner
+XBIO	-2.68
+IDN	0.0
+GSV	-2.67
+BUR	-7.31
+SPI	-4.63
+ARAY	1.79
+
+
+Shares with Shorts >= 15%:
+
+ANTH	0.53
+MUX	-6.77
+ANY	-1.17
+PRKR	-6.5
+
+
+Shares with price uptrend for 4 or more days and near 52 week low:
+
+LINK	-1.02
+HTBX	1.66
+CMRE	4.04
+TTNP	-1.72
+
+
+Possible Great Stocks (4 Day Price Uptrend):
+
+ANTH	0.53
+PRKR	-6.5
+MUX	-6.77
+CERS	-1.4
+IPWR	-9.77
+ACHV	-6.44
+IDN	0.0
+CMRE	4.04
+OGEN	37.32	Winner
+EMMS	1.95
+ADVM	12.17	Watch Again
+AYTU	3.11
+SPI	-4.63
+ISR	2.22
+XBIO	-2.68
+MYO	9.8	Watch Again
+VGZ	0.62
+USAS	-2.67
+GMO	1.99
+THM	-1.77
+ARAY	1.79
+
+
+The Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain, 4 Day Price Uptrend):
+
+ANTH	0.53
+PRKR	-6.5
+MUX	-6.77
+CERS	-1.4
+WKHS	1.26
+IPWR	-9.77
+CMRE	4.04
+SAEX	-3.15
+NLST	-10.22
+
+
+Top 10 Stocks Experiencing Greatest Pain (Short Pain):
+
+ANTH	0.53
+ANY	-1.17
+PRKR	-6.5
+ITUS	10.51	Watch Again
+MUX	-6.77
+CVRS	6.5	Watch Again
+AMSC	-5.26
+CERS	-1.4
+CYTX	-2.15
+WKHS	1.26

@@ -1,0 +1,153 @@
+Stocks with Positive Price and Volume Trend:
+
+LINK	0.0
+ONP	-8.81
+NCTY	8.81	Watch Again
+EVOL	-1.83
+MRDN	-2.44
+MTP	-2.31
+MTBC	-3.16
+GSUM	-1.55
+CYTX	-5.61
+ESNC	-6.14
+KOOL	-13.64
+NTN	0.67
+AMRS	6.74	Watch Again
+ITUS	2.82
+AMRH	71.93	Winner
+PRCP	-0.84
+ARGS	-3.7
+LINU	-5.58
+KODK	57.35	Winner
+NAUH	-3.73
+QNST	-3.09
+CGG	-6.77
+ISR	1.55
+ERN	-6.78
+DFFN	-13.88
+MCEP	-6.63
+NVTA	1.31
+CAMT	0.3
+CWBR	-7.56
+FH	7.91	Watch Again
+PES	0.0
+DL	-1.01
+VII	-4.37
+LMFA	-8.44
+TA	1.12
+NH	-3.85
+JAGX	-4.29
+MDGS	-1.29
+CPAH	12.96	Watch Again
+EYEG	2.48
+NSPR	-28.57
+MN	-1.22
+OHGI	-1.44
+ANY	-9.15
+NEWA	4.37
+BPMX	-6.5
+VTGN	0.84
+ENSV	-5.0
+SSKN	4.29
+PAVM	17.16	Winner
+PER	-2.17
+GENE	14.58	Watch Again
+
+
+Shares with Shorts >= 15%:
+
+KODK	57.35	Winner
+AMRS	6.74	Watch Again
+IMGN	1.22
+ANY	-9.15
+NH	-3.85
+MTBC	-3.16
+AREX	4.42
+SN	2.0
+ARGS	-3.7
+ERN	-6.78
+VHC	-1.23
+
+
+Shares with price uptrend for 4 or more days:
+
+DFBG	-2.5
+BIOL	5.14	Watch Again
+ESNC	-6.14
+MBVX	11.1	Watch Again
+ISR	1.55
+MDGS	-1.29
+DXR	-4.57
+KAAC	0.21
+PER	-2.17
+
+
+Possible Great Stocks (Short Pain, 4 Day Price Uptrend):
+
+AMRS	6.74	Watch Again
+ERN	-6.78
+DFFN	-13.88
+ANY	-9.15
+MTBC	-3.16
+NH	-3.85
+EYEG	2.48
+NVTA	1.31
+CYTX	-5.61
+JAGX	-4.29
+ENSV	-5.0
+PES	0.0
+MN	-1.22
+OHGI	-1.44
+LMFA	-8.44
+QNST	-3.09
+MCEP	-6.63
+MRDN	-2.44
+CAMT	0.3
+NEWA	4.37
+PAVM	17.16	Winner
+ISR	1.55
+CPAH	12.96	Watch Again
+NCTY	8.81	Watch Again
+MTP	-2.31
+GSUM	-1.55
+AMRH	71.93	Winner
+CGG	-6.77
+MDGS	-1.29
+GENE	14.58	Watch Again
+
+
+The Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain, 4 Day Price Uptrend):
+
+KODK	57.35	Winner
+NSPR	-28.57
+AMRS	6.74	Watch Again
+ERN	-6.78
+ARGS	-3.7
+ITUS	2.82
+ANY	-9.15
+MTBC	-3.16
+NH	-3.85
+BPMX	-6.5
+EYEG	2.48
+KOOL	-13.64
+NVTA	1.31
+CYTX	-5.61
+LINU	-5.58
+JAGX	-4.29
+VTGN	0.84
+PES	0.0
+SSKN	4.29
+
+
+Top 10 Stocks Experiencing Greatest Pain (Short Pain):
+
+KODK	57.35	Winner
+NSPR	-28.57
+AMRS	6.74	Watch Again
+ERN	-6.78
+SN	2.0
+ARGS	-3.7
+AKER	-15.38
+ITUS	2.82
+DFFN	-13.88
+GLBS	3.79

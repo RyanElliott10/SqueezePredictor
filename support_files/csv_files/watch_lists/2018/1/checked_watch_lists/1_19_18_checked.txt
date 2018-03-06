@@ -1,0 +1,120 @@
+Stocks with Positive Price and Volume Trend:
+
+NBEV	22.5	Winner
+CETX	1.01
+WPCS	-11.34
+MTBC	0.31
+QUIK	-0.5
+CCIH	0.82
+PLG	5.34	Watch Again
+SIF	-5.0
+LEDS	-6.18
+ARLZ	1.53
+DYNT	-10.77
+APVO	-0.3
+SEED	-2.44
+ALN	-10.85
+CLIR	0.0
+AGLE	2.27
+HTM	-4.0
+CPSH	-4.81
+CWBR	0.0
+PFMT	0.0
+EGAN	-1.67
+WAC	-4.98
+METC	1.24
+KMPH	0.18
+LLIT	3.16
+JAGX	-9.83
+RADA	-2.15
+JTPY	-2.08
+YTEN	0.0
+CNTF	-2.6
+AKTS	-1.34
+TTOO	2.15
+CDNA	0.16
+MARA	-6.17
+SPI	2.75
+EVK	1.96
+NVAX	8.24	Watch Again
+EPIX	-2.46
+
+
+Shares with Shorts >= 15%:
+
+ICON	-6.17
+ATOS	-1.78
+HTGM	-3.24
+MTBC	0.31
+METC	1.24
+CDNA	0.16
+SQBG	-2.27
+SDRL	0.0
+
+
+Shares with price uptrend for 4 or more days and near 52 week low:
+
+CXE	-0.57
+DXYN	1.27
+
+
+Possible Great Stocks (Short Pain, 4 Day Price Uptrend):
+
+METC	1.24
+JAGX	-9.83
+LEDS	-6.18
+WPCS	-11.34
+QUIK	-0.5
+MTBC	0.31
+NBEV	22.5	Winner
+RADA	-2.15
+NVAX	8.24	Watch Again
+MARA	-6.17
+YTEN	0.0
+TTOO	2.15
+AKTS	-1.34
+APVO	-0.3
+KMPH	0.18
+AGLE	2.27
+SPI	2.75
+PFMT	0.0
+LLIT	3.16
+EVK	1.96
+EPIX	-2.46
+PLG	5.34	Watch Again
+CNTF	-2.6
+
+
+The Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain, 4 Day Price Uptrend):
+
+METC	1.24
+JAGX	-9.83
+LEDS	-6.18
+WPCS	-11.34
+QUIK	-0.5
+WAC	-4.98
+MTBC	0.31
+CETX	1.01
+NBEV	22.5	Winner
+ARLZ	1.53
+CDNA	0.16
+RADA	-2.15
+NVAX	8.24	Watch Again
+MARA	-6.17
+TTOO	2.15
+CLIR	0.0
+AKTS	-1.34
+
+
+Top 10 Stocks Experiencing Greatest Pain (Short Pain):
+
+ICON	-6.17
+ATOS	-1.78
+HTGM	-3.24
+METC	1.24
+CYTX	-4.48
+JAGX	-9.83
+LEDS	-6.18
+WPCS	-11.34
+QUIK	-0.5
+WAC	-4.98

@@ -1,0 +1,201 @@
+Stocks with Positive Price and Volume Trend:
+
+DVD	-1.25
+GNCA	2.5
+EARS	13.61	Watch Again
+DARE	-39.78
+CRME	-4.79
+TYHT	32.26	Winner
+SVM	1.56
+XENE	-5.33
+KOPN	-2.9
+JMBA	3.53
+EFOI	4.72
+GEVO	-4.93
+NTZ	2.67
+ROSE	2.57
+NHLD	-1.49
+USAS	-1.29
+RELV	-4.46
+ASM	-1.42
+MARK	2.82
+EXK	-0.9
+PLG	-0.28
+AUG	-2.98
+ADXS	-0.36
+DYNT	6.78	Watch Again
+HOS	-1.27
+RUN	-0.5
+AKTX	-5.49
+CRNT	6.22	Watch Again
+ICON	-9.83
+ROSG	2.02
+ONDK	8.26	Watch Again
+TGB	0.0
+XTLB	0.0
+NNDM	1.03
+NCV	0.74
+AGLE	1.36
+AKG	4.42
+MCEP	-1.22
+AVIR	4.11
+MBOT	-2.35
+HTGM	10.62	Watch Again
+LQDT	4.41
+TZOO	3.65
+JMEI	2.55
+SBGL	2.76
+POLA	2.23
+JE	3.48
+TRVN	-2.86
+RAS	0.06
+HUSA	-8.57
+FTR	3.4
+APPS	5.45	Watch Again
+LLIT	-11.61
+IDN	-1.59
+AAV	-3.23
+ARCT	-6.19
+PTI	4.65
+DNR	-2.45
+NM	-1.57
+GUT	-0.14
+WG	0.0
+NQ	0.43
+NAK	-2.68
+MTNB	-3.19
+XTNT	-2.71
+CRMD	-1.47
+XRM	-1.64
+EPE	-1.65
+SDLP	2.45
+SGYP	1.93
+ICON	-9.83
+JMBA	3.53
+
+
+Shares with Shorts >= 15%:
+
+ADXS	-0.36
+CYCC	-1.23
+RUN	-0.5
+EPE	-1.65
+HTGM	10.62	Watch Again
+BLPH	-1.38
+DNR	-2.45
+APRI	1.11
+METC	3.09
+NETE	-3.53
+ROSG	2.02
+AEMD	6.49	Watch Again
+DEST	-5.68
+MBOT	-2.35
+PPR	0.0
+CIK	-1.52
+NCZ	-0.17
+JMM	0.54
+SDR	0.05
+EVF	0.0
+
+
+Shares with price uptrend for 4 or more days and near 52 week low:
+
+BPTH	-5.7
+PFIN	0.42
+AHC	1.98
+LINC	0.0
+NCV	0.74
+MCN	0.82
+GUT	-0.14
+RSYS	-4.71
+MHF	0.55
+ACHN	1.36
+YGE	-2.56
+BUR	0.58
+AXSM	3.92
+GCAP	-0.3
+AAME	-3.08
+CBAK	3.7
+DSE	0.17
+DARE	-39.78
+HTGM	10.62	Watch Again
+RUN	-0.5
+DNR	-2.45
+HOS	-1.27
+EPE	-1.65
+ADXS	-0.36
+GNCA	2.5
+CRMD	-1.47
+
+
+Possible Great Stocks (Short Pain, 4 Day Price Uptrend):
+
+GEVO	-4.93
+ONDK	8.26	Watch Again
+RAS	0.06
+MARK	2.82
+IDN	-1.59
+POLA	2.23
+APPS	5.45	Watch Again
+ARCT	-6.19
+EFOI	4.72
+ROSE	2.57
+LQDT	4.41
+AGLE	1.36
+CRNT	6.22	Watch Again
+XENE	-5.33
+MCEP	-1.22
+LLIT	-11.61
+WG	0.0
+TYHT	32.26	Winner
+SVM	1.56
+USAS	-1.29
+PLG	-0.28
+AKTX	-5.49
+TGB	0.0
+NNDM	1.03
+NCV	0.74
+JMEI	2.55
+PTI	4.65
+NM	-1.57
+NQ	0.43
+SDLP	2.45
+ICON	-9.83
+DARE	-39.78
+JMBA	3.53
+HTGM	10.62	Watch Again
+RUN	-0.5
+DNR	-2.45
+HOS	-1.27
+EPE	-1.65
+MBOT	-2.35
+HUSA	-8.57
+ADXS	-0.36
+ROSG	2.02
+
+
+The Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain, 4 Day Price Uptrend):
+
+GNCA	2.5
+CRMD	-1.47
+NAK	-2.68
+TRVN	-2.86
+KOPN	-2.9
+GEVO	-4.93
+XTNT	-2.71
+ONDK	8.26	Watch Again
+RAS	0.06
+POLA	2.23
+APPS	5.45	Watch Again
+TZOO	3.65
+ARCT	-6.19
+ICON	-9.83
+DARE	-39.78
+JMBA	3.53
+HTGM	10.62	Watch Again
+APRI	1.11
+RUN	-0.5
+SGYP	1.93
+DNR	-2.45
+HOS	-1.27
+NAT	-2.28

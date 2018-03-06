@@ -1,0 +1,129 @@
+Stocks with Positive Price and Volume Trend:
+
+ONP	0.0
+NBEV	-1.79
+FRAN	0.64
+ENG	2.97
+RCG	-8.24
+CKPT	0.81
+GNCA	-1.21
+NVCN	23.34	Winner
+NNVC	2.91
+FORD	-15.59
+CERC	9.18	Watch Again
+RFIL	-1.82
+IFON	-2.81
+RELV	-3.66
+CVEO	-1.13
+KZIA	6.13	Watch Again
+NTN	-0.18
+IPCI	-6.81
+ABAC	-3.01
+TPIV	2.02
+KDMN	3.48
+BBRG	1.67
+SGYP	10.0	Watch Again
+ARWR	1.59
+HSON	-2.94
+IPAS	2.0
+SGLB	-5.46
+MIND	-8.08
+LBIX	-3.83
+ISNS	-1.98
+PLXP	4.55
+RNN	0.42
+CRHM	-1.69
+ZDGE	-0.32
+ARDM	5.68	Watch Again
+INPX	-4.27
+BURG	-2.08
+CHFS	5.14	Watch Again
+MYOS	-0.01
+MOXC	-3.44
+PER	0.0
+BVXV	1.5
+NVAX	8.63	Watch Again
+
+
+Shares with Shorts >= 15%:
+
+SGYP	10.0	Watch Again
+ARDM	5.68	Watch Again
+CHFS	5.14	Watch Again
+RVLT	0.61
+TCS	-1.2
+TRXC	-1.5
+DEST	-0.4
+MYOS	-0.01
+
+
+Shares with price uptrend for 4 or more days and near 52 week low:
+
+FRAN	0.64
+HIX	-0.14
+SMED	2.91
+EMKR	-1.42
+DHY	0.36
+
+
+Possible Great Stocks (4 Day Price Uptrend):
+
+FORD	-15.59
+ARDM	5.68	Watch Again
+CHFS	5.14	Watch Again
+NBEV	-1.79
+CERC	9.18	Watch Again
+GNCA	-1.21
+NVAX	8.63	Watch Again
+MYOS	-0.01
+LBIX	-3.83
+ARWR	1.59
+KDMN	3.48
+INPX	-4.27
+PLXP	4.55
+BURG	-2.08
+ZDGE	-0.32
+TPIV	2.02
+CVEO	-1.13
+MIND	-8.08
+ABAC	-3.01
+ENG	2.97
+RCG	-8.24
+CKPT	0.81
+KZIA	6.13	Watch Again
+BVXV	1.5
+
+
+The Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain, 4 Day Price Uptrend):
+
+FORD	-15.59
+ARDM	5.68	Watch Again
+SGYP	10.0	Watch Again
+CHFS	5.14	Watch Again
+NBEV	-1.79
+CERC	9.18	Watch Again
+RNN	0.42
+GNCA	-1.21
+NVAX	8.63	Watch Again
+MYOS	-0.01
+LBIX	-3.83
+BBRG	1.67
+IFON	-2.81
+ARWR	1.59
+KDMN	3.48
+INPX	-4.27
+FRAN	0.64
+
+
+Top 10 Stocks Experiencing Greatest Pain (Short Pain):
+
+FORD	-15.59
+ARDM	5.68	Watch Again
+SGYP	10.0	Watch Again
+CHFS	5.14	Watch Again
+NBEV	-1.79
+RVLT	0.61
+CERC	9.18	Watch Again
+RNN	0.42
+GNCA	-1.21
+TRXC	-1.5

@@ -1,0 +1,172 @@
+Stocks with Positive Price and Volume Trend:
+
+OPGN	0.0
+WTI	1.26
+NVCN	-7.35
+NNVC	-6.6
+ADVM	4.85
+JONE	4.51
+ABIL	-6.8
+CERC	9.66	Watch Again
+ELMD	-0.2
+VOC	0.62
+KZIA	6.41	Watch Again
+LTRX	0.4
+OSN	6.99	Watch Again
+ITUS	-2.8
+PRKR	0.0
+SSW	-1.14
+ARGS	11.01	Watch Again
+APVO	-1.4
+VNRX	0.27
+ENRJ	0.5
+CEI	-3.76
+RIGL	-1.1
+NDRA	-4.56
+ICON	-5.63
+LTBR	1.29
+PXS	-8.42
+ANTH	8.45	Watch Again
+ROYT	5.0	Watch Again
+JOB	6.69	Watch Again
+AGLE	-11.2
+AKG	3.74
+CHEK	-2.15
+NYMX	0.0
+ZIOP	-4.86
+CPSH	-4.32
+IMI	0.0
+CNAT	13.08	Watch Again
+LUB	5.42	Watch Again
+GNC	-5.62
+AQB	3.39
+CATS	-1.59
+AEZS	0.0
+NSPR	-3.81
+TNXP	5.45	Watch Again
+EAST	-2.52
+RLGT	0.0
+ATEN	0.15
+KIQ	-1.52
+CVM	0.91
+PQ	-3.16
+ALDX	-2.7
+LGCY	0.9
+ARDM	-11.57
+BOXL	7.13	Watch Again
+EPE	1.21
+TTNP	5.56	Watch Again
+NVAX	4.21
+
+
+Shares with Shorts >= 15%:
+
+JONE	4.51
+CYH	-8.14
+OPGN	0.0
+ARGS	11.01	Watch Again
+ICON	-5.63
+ARDM	-11.57
+ZIOP	-4.86
+ANTH	8.45	Watch Again
+CHFS	-5.38
+EPE	1.21
+HTGM	18.54	Winner
+BLPH	1.24
+PRKR	0.0
+IMGN	-4.09
+JAKK	0.99
+
+
+Shares with price uptrend for 4 or more days and near 52 week low:
+
+CMRE	-1.91
+NNVC	-6.6
+HIO	0.6
+SSNT	-2.39
+ARGS	11.01	Watch Again
+IPAS	-0.02
+CPTA	-0.13
+ATEN	0.15
+
+
+Possible Great Stocks (4 Day Price Uptrend):
+
+OPGN	0.0
+ZIOP	-4.86
+HTGM	18.54	Winner
+ANTH	8.45	Watch Again
+JONE	4.51
+EPE	1.21
+ARDM	-11.57
+NVAX	4.21
+CERC	9.66	Watch Again
+PRKR	0.0
+NYMX	0.0
+RIGL	-1.1
+WTI	1.26
+TTNP	5.56	Watch Again
+CNAT	13.08	Watch Again
+APVO	-1.4
+AQB	3.39
+TNXP	5.45	Watch Again
+ENRJ	0.5
+AGLE	-11.2
+CHEK	-2.15
+PQ	-3.16
+LGCY	0.9
+ATEN	0.15
+ADVM	4.85
+ROYT	5.0	Watch Again
+PXS	-8.42
+VOC	0.62
+JOB	6.69	Watch Again
+IMI	0.0
+AEZS	0.0
+KZIA	6.41	Watch Again
+CEI	-3.76
+NDRA	-4.56
+KIQ	-1.52
+BOXL	7.13	Watch Again
+
+
+The Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain, 4 Day Price Uptrend):
+
+OPGN	0.0
+ZIOP	-4.86
+HTGM	18.54	Winner
+LTBR	1.29
+ANTH	8.45	Watch Again
+JONE	4.51
+EPE	1.21
+ARDM	-11.57
+ICON	-5.63
+CATS	-1.59
+NVAX	4.21
+CERC	9.66	Watch Again
+PRKR	0.0
+ITUS	-2.8
+NYMX	0.0
+NSPR	-3.81
+ALDX	-2.7
+RIGL	-1.1
+WTI	1.26
+TTNP	5.56	Watch Again
+ARGS	11.01	Watch Again
+CNAT	13.08	Watch Again
+AQB	3.39
+SSW	-1.14
+
+
+Top 10 Stocks Experiencing Greatest Pain (Short Pain):
+
+OPGN	0.0
+ZIOP	-4.86
+CYH	-8.14
+HTGM	18.54	Winner
+LTBR	1.29
+ANTH	8.45	Watch Again
+JONE	4.51
+INSG	-3.7
+EPE	1.21
+ARDM	-11.57

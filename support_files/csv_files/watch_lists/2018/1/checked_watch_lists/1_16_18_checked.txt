@@ -1,0 +1,137 @@
+Stocks with Positive Price and Volume Trend:
+
+USEG	-1.18
+FCSC	6.43	Watch Again
+OVAS	-1.69
+WPCS	-20.0
+DDE	-1.8
+TUES	8.33	Watch Again
+HEAR	-19.02
+YUMA	-8.59
+ATAI	2.37
+SGRP	-9.09
+SHLD	-2.22
+NTN	6.51	Watch Again
+XPL	-1.41
+AVEO	2.53
+KDMN	3.55
+GALT	-9.03
+SMSI	1.46
+ICON	-5.3
+TNTR	-0.15
+ARWR	-2.1
+ROYT	3.73
+OASM	3.57
+AKG	7.88	Watch Again
+SDPI	8.05	Watch Again
+RUBI	-7.98
+DYSL	3.2
+NERV	4.0
+IMRN	-5.37
+ABCD	3.15
+TIK	4.92
+APRI	-4.4
+INPX	35.29	Winner
+RAVE	4.84
+SHSP	0.0
+RCON	77.19	Winner
+MOXC	-1.08
+MNGA	6.06	Watch Again
+MARA	-13.91
+
+
+Shares with Shorts >= 15%:
+
+SHLD	-2.22
+SN	-5.68
+TUES	8.33	Watch Again
+SHOS	7.41	Watch Again
+ICON	-5.3
+OCUL	-5.36
+APRI	-4.4
+CVO	-2.65
+PACB	5.16	Watch Again
+
+
+Shares with price uptrend for 4 or more days:
+
+GORO	7.3	Watch Again
+SSC	-13.68
+QHC	-4.83
+VLRX	0.28
+IDRA	-3.21
+SHOS	7.41	Watch Again
+AUMN	-1.7
+AGLE	-3.16
+SDPI	8.05	Watch Again
+CALI	5.66	Watch Again
+NERV	4.0
+CASC	-0.49
+FNKO	-4.79
+CMCL	0.93
+SN	-5.68
+ICD	-0.41
+SHSP	0.0
+
+
+Possible Great Stocks (Short Pain, 4 Day Price Uptrend):
+
+WPCS	-20.0
+TUES	8.33	Watch Again
+INPX	35.29	Winner
+TNTR	-0.15
+YUMA	-8.59
+AVEO	2.53
+FCSC	6.43	Watch Again
+USEG	-1.18
+MARA	-13.91
+ARWR	-2.1
+KDMN	3.55
+MNGA	6.06	Watch Again
+OVAS	-1.69
+NERV	4.0
+GALT	-9.03
+RCON	77.19	Winner
+RUBI	-7.98
+SDPI	8.05	Watch Again
+ROYT	3.73
+XPL	-1.41
+ATAI	2.37
+OASM	3.57
+IMRN	-5.37
+
+
+The Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain, 4 Day Price Uptrend):
+
+WPCS	-20.0
+SHLD	-2.22
+APRI	-4.4
+HEAR	-19.02
+TUES	8.33	Watch Again
+ICON	-5.3
+INPX	35.29	Winner
+TNTR	-0.15
+YUMA	-8.59
+AVEO	2.53
+FCSC	6.43	Watch Again
+USEG	-1.18
+MARA	-13.91
+ARWR	-2.1
+KDMN	3.55
+MNGA	6.06	Watch Again
+OVAS	-1.69
+NERV	4.0
+
+
+Top 10 Stocks Experiencing Greatest Pain (Short Pain):
+
+WPCS	-20.0
+SHLD	-2.22
+OCUL	-5.36
+APRI	-4.4
+HEAR	-19.02
+TUES	8.33	Watch Again
+ICON	-5.3
+INPX	35.29	Winner
+TNTR	-0.15
+YUMA	-8.59

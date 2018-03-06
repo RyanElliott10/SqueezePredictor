@@ -1,0 +1,191 @@
+High Shares Float:
+
+
+
+Stocks with Positive Price and Volume Trend:
+
+WPRT	10.213	Watch Again
+INTX	-5.15
+YOGA	-5.245
+DFBG	-2.083
+ENG	-2.247
+IDSA	4.969
+SAEX	9.419	Watch Again
+OHRP	-0.595
+DARE	0.0
+MYO	3.788
+CRME	5.625	Watch Again
+SRNE	-2.254
+EFOI	2.734
+ARTW	1.667
+CHCI	-0.582
+NHLD	9.211	Watch Again
+CERC	6.601	Watch Again
+UAMY	5.387	Watch Again
+VCEL	1.359
+RELV	-4.508
+ASM	-2.822
+BIOS	0.883
+BDR	2.239
+NXTD	-6.496
+TPIV	-3.8
+SNDE	9.155	Watch Again
+MEIP	2.985
+PRQR	2.273
+DYNT	0.0
+BBRG	-5.185
+ADOM	34.772	Winner
+JASN	0.813
+UONE	-5.526
+CFRX	-4.536
+CASI	-2.41
+ROYT	7.558	Watch Again
+ARCI	3.041
+HSON	7.143	Watch Again
+HTM	-4.225
+USAU	-5.521
+FATE	9.458	Watch Again
+MLSS	7.619	Watch Again
+TAT	4.348
+PTI	8.901	Watch Again
+YGYI	0.907
+JRJC	-5.017
+GNRT	-1.608
+CVM	1.587
+LGCY	-2.362
+TENX	-0.82
+AXSM	1.149
+ENSV	-1.911
+SHSP	-4.545
+MFIN	-3.562
+
+
+Stocks with High Beta:
+
+WPRT	10.511	Watch Again
+DFBG	-2.083
+ICCC	-2.003
+ENG	-2.247
+AFMD	-7.407
+DARE	0.0
+SRNE	-2.254
+HGSH	-3.759
+EFOI	2.734
+CHCI	-0.582
+UAMY	5.387	Watch Again
+VCEL	0.971
+IPWR	20.301	Winner
+BDR	2.239
+NXTD	-6.89
+GBR	-6.768
+TPIV	-3.8
+MEIP	2.985
+INFI	-0.485
+HOS	-1.754
+GALT	4.651
+LITB	5.528	Watch Again
+CEI	-1.587
+IBIO	5.714	Watch Again
+TRIL	6.993	Watch Again
+ARCW	-1.587
+ISR	-6.667
+DRAD	0.0
+ARWR	2.83
+FTFT	50.575	Winner
+CASI	-2.41
+ROYT	7.558	Watch Again
+FATE	10.16	Watch Again
+ISIG	-3.047
+OGEN	-6.283
+TAT	4.348
+PQ	4.52
+LGCY	-2.362
+TENX	-0.82
+ENSV	-1.911
+LODE	12.701	Watch Again
+MFIN	-3.562
+TTNP	-1.786
+
+
+Stocks with Low Beta:
+
+INTX	-5.15
+YOGA	-5.245
+IDSA	4.969
+SAEX	6.792	Watch Again
+OHRP	-0.595
+ITEK	-0.73
+MYO	3.71
+CRME	5.625	Watch Again
+ARTW	1.667
+NHLD	7.624	Watch Again
+CERC	6.601	Watch Again
+TOPS	-3.626
+RELV	-4.508
+RHE	-7.143
+ASM	-2.671
+BIOS	0.883
+AUG	8.485	Watch Again
+SNDE	9.155	Watch Again
+PRQR	2.273
+DYNT	0.0
+BBRG	-5.556
+ADOM	35.326	Winner
+JASN	0.813
+ROSG	1.455
+CLDC	-1.254
+UONE	-5.526
+CFRX	-4.545
+ARCI	3.041
+HSON	7.143	Watch Again
+CODX	5.678	Watch Again
+HTM	-4.225
+RTTR	0.153
+USAU	-5.521
+MLSS	7.619	Watch Again
+VII	-3.291
+METC	14.239	Watch Again
+PTI	8.028	Watch Again
+MLNK	0.382
+YGYI	0.907
+JRJC	-5.017
+GNRT	-1.447
+CVM	1.587
+AXSM	0.383
+XTNT	-3.147
+SHSP	-4.545
+TWMC	-0.541
+EPIX	3.478
+
+
+Shares with High Shorts and Change:
+
+MFIN	-3.817
+
+
+The Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float, High Beta):
+
+WPRT	10.511	Watch Again
+DARE	0.0
+NXTD	-6.102
+MFIN	-3.817
+-1.447
+CVM	1.058
+AXSM	1.149
+XTNT	-1.754
+SHSP	-4.545
+TWMC	0.0
+EPIX	3.478
+
+
+Shares with High Shorts and Change:
+
+MFIN	-3.308
+
+
+The Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float, High Beta):
+
+WPRT	9.61	Watch Again
+DARE	-1.606
+NXTD	-2.953
+MFIN	-3.308
