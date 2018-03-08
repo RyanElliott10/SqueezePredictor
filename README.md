@@ -26,9 +26,9 @@ pip install progressbar
 
 pip install requests_cache
 
-pip install pandas
+pip install request
 
-pip install urllib3
+pip install pandas
 
 
 Tools:
