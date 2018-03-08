@@ -8,7 +8,7 @@ Works on Python 2.7+ and 3.5+
 Python Library Installs:
 ------------------------
 
-pip install requests
+pip install requests\n
 pip install beautifulsoup
 pip install progressbar
 pip install requests_cache
