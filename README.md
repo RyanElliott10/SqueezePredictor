@@ -11,6 +11,10 @@ Running data_formatting.py will run a script which parses all of the previous wa
 
 Works on Python 2.7+ and 3.5+
 
+KNOWN BUG: 
+----------
+Yahoo! Finance recently reformatted their pages, so the script will not appropriately parse every webpage. Update coming soon.
+
 Python Library Installs:
 ------------------------
 
