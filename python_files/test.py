@@ -6,13 +6,13 @@ import requests
 import matplotlib.pyplot as plt
 from matplotlib import style
 
-#from matplotlib.finance import candlestick_ohlc
+# from matplotlib.finance import candlestick_ohlc
 import matplotlib.dates as mdates
 import pandas as pd
 import pandas_datareader.data as web
 from yahoo_finance import Share
 
-#from datetime import date
+# from datetime import date
 import datetime
 import time
 
@@ -22,8 +22,8 @@ import bs4
 
 from urllib.request import urlopen as uReq
 from bs4 import BeautifulSoup as soup
-# ^ all of the imports for BeautifulSoup
 
+# ^ all of the imports for BeautifulSoup
 
 
 string = 'XIV'
@@ -37,7 +37,6 @@ for char in string:
 
 """for char in string:
     print(repr(char))"""
-
 
 url = 'https://finance.yahoo.com/quote/LEJU?p=LEJU'
 
@@ -69,7 +68,6 @@ while type(curr) is not bs4.BeautifulSoup:
 
 print(curr)
 
-
 # start = datetime.datetime(2017, 12, 10)
 # cont = True
 # while cont:
@@ -79,11 +77,6 @@ print(curr)
 #     except:
 #         pass
 # print(df)
-
-
-
-
-
 
 
 today = datetime.date.today()

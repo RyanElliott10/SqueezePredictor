@@ -1,22 +1,13 @@
 import datetime
-
-# imports for Yahoo! Finance api, Pandas, MatPlotLib
-import matplotlib.pyplot as plt
-from matplotlib import style
-#from matplotlib.finance import candlestick_ohlc
-import matplotlib.dates as mdates
-import pandas as pd
-import pandas_datareader.data as web
-from yahoo_finance import Share
 import time
 
 # imports for BeautifulSoup
 import operator
 import bs4
 
-try:    #python3
+try:  # python3
     from urllib.request import urlopen as uReq
-except: #python2
+except:  # python2
     from urllib2 import urlopen as uReq
 from bs4 import BeautifulSoup as soup
 
@@ -27,9 +18,6 @@ import requests
 import progressbar
 import requests_cache
 import concurrent.futures
-
-
-
 
 
 # nodes used in the hash table
@@ -52,9 +40,6 @@ class Node:
         self.shorts_percent_float = 0
         self.shorts_pain = 0
         self.days_to_cover = 0
-
-
-
 
 
 class Hash:
@@ -104,7 +89,6 @@ class Hash:
                 self.capacity = val
                 break
 
-
     def rehash(self):
         """ Rehashes the entire hash_table. """
         # Figure out a way to set a new table to one efficiently, don't just do self.hash_table = tmp_table
@@ -113,7 +97,7 @@ class Hash:
         tmp_table = [None] * self.capacity
 
         for val in self.hash_table:
-            if val:         # if there is a value in the slot, rehash into new slot
+            if val:  # if there is a value in the slot, rehash into new slot
                 key = 1
                 ticker = val.ticker
 
@@ -133,7 +117,6 @@ class Hash:
                     num += 1
 
         self.hash_table = tmp_table
-
 
     def insert(self, ticker):
         """ The key will be the ascii value of each char multiplied by the total so far. Returns -1 if it cannot be entered. """
@@ -168,7 +151,6 @@ class Hash:
             val += 1
         return -1
 
-
     def remove(self, ticker):
         """ Will remove the node at the hash_value. Returns -1 if not found. """
 
@@ -187,7 +169,6 @@ class Hash:
                 return tmp
             val += 1
         return -1
-
 
     def get(self, ticker):
         """ Will return the node which will allow you to access whatever you want (ticker, price, etc.). """
@@ -208,24 +189,22 @@ class Hash:
 
         return -1
 
-
     def print_tcker(self):
         for val in self.hash_table:
             if val is not None:
                 print('$' + val.ticker)
 
-
-    #Utility function to prefetch webpages concurrently
+    # Utility function to prefetch webpages concurrently
     def pre_fetch_webpages(self):
         requests_cache.install_cache('cache', backend='sqlite', expire_after=3600)
         with concurrent.futures.ThreadPoolExecutor(max_workers=50) as executor:
-            bar = progressbar.ProgressBar(max_value=self.num_items-1)
-            future_to_tickers = {executor.submit(self.get_page_async, nd): nd for nd in self.hash_table if nd is not None}
+            bar = progressbar.ProgressBar(max_value=self.num_items - 1)
+            future_to_tickers = {executor.submit(self.get_page_async, nd): nd for nd in self.hash_table if
+                                 nd is not None}
             foo = 0
             for future in concurrent.futures.as_completed(future_to_tickers):
                 bar.update(foo)
                 foo += 1
-
 
     def get_page_async(self, nd):
         if nd is not None:
@@ -237,22 +216,12 @@ class Hash:
             url = 'https://finance.yahoo.com/quote/' + ticker + '/key-statistics?p=' + ticker
             page = self.get_page(url)
 
+            ########################################################################
+            #####     BEGINNING OF TRUE FUNCTIONS (I.E. THE SCREENING PART)    #####
+            ########################################################################
 
-
-
-
-
-                            ########################################################################
-                            #####     BEGINNING OF TRUE FUNCTIONS (I.E. THE SCREENING PART)    #####
-                            ########################################################################
-
-
-
-
-# Currently, the 'perfect' stock has a volume and price uptrend, >= 5% shares float, beta > 1% or < -1, price at or below $10.00,
-# and daily percent change between the days is >= 5%.
-
-
+    # Currently, the 'perfect' stock has a volume and price uptrend, >= 5% shares float, beta > 1% or < -1, price at or below $10.00,
+    # and daily percent change between the days is >= 5%.
 
     def init_run(self):
         """ Screens the stocks and adds to watchlist if their daily percent change is >= 5. """
@@ -261,8 +230,7 @@ class Hash:
 
         self.write_list.append('Ticker\t% Chng\n\n')
 
-
-        bar = progressbar.ProgressBar(max_value=self.num_items-1)
+        bar = progressbar.ProgressBar(max_value=self.num_items - 1)
         foo = 0
         for nd in self.hash_table:
             if nd is not None:
@@ -280,7 +248,7 @@ class Hash:
                     nd.curr_price = float(page.findAll('span')[10].text)
                 except:
                     try:
-                        while type(curr) is not bs4.BeautifulSoup:# and count < 5:
+                        while type(curr) is not bs4.BeautifulSoup:  # and count < 5:
                             client_page = uReq(url)
                             webpage = client_page.read()
 
@@ -293,19 +261,21 @@ class Hash:
                         not_lst.append(ticker)
                         cont = False
 
-
                 if cont:
                     # checks if the stock is within 35% of 52 week low
                     self.check_yearly_low(nd, page)
 
                     # gets the previous close price
-                    nd.prev_close = float(page.findAll('span', {'class':'Trsdu(0.3s) '})[0].text)
+                    nd.prev_close = float(page.findAll('span', {'class': 'Trsdu(0.3s) '})[0].text)
 
                     # calculates percent change and rounds to 3 decimals
-                    nd.perc_change = round((((nd.curr_price / nd.prev_close) - 1) * 100), 3)
+                    try:
+                        nd.perc_change = round((((nd.curr_price / nd.prev_close) - 1) * 100), 3)
+                    except:
+                        nd.perc_change = 0
 
                     # gets the average volume
-                    text_avg_volume = page.findAll('span', {'class':'Trsdu(0.3s) '})[5].text.replace(',', '')
+                    text_avg_volume = page.findAll('span', {'class': 'Trsdu(0.3s) '})[5].text.replace(',', '')
 
                     # safeguards against any failed volume-getting attempts
                     try:
@@ -313,13 +283,13 @@ class Hash:
                     except:
                         # tries another spot the volume could be
                         try:
-                            text_avg_volume = page.findAll('span', {'class':'Trsdu(0.3s) '})[4].text
+                            text_avg_volume = page.findAll('span', {'class': 'Trsdu(0.3s) '})[4].text
                             text_avg_volume = text_avg_volume.replace(',', '')
                             nd.avg_volume = float(text_avg_volume)
                         except:
                             # tries another spot the volume could be
                             try:
-                                text_avg_volume = page.findAll('span', {'class':'Trsdu(0.3s) '})[3].text
+                                text_avg_volume = page.findAll('span', {'class': 'Trsdu(0.3s) '})[3].text
                                 text_avg_volume = text_avg_volume.replace(',', '')
                                 nd.avg_volume = float(text_avg_volume)
                             except:
@@ -337,7 +307,6 @@ class Hash:
                         self.watchlist.append(nd)
                         self.four_day_uptrend.append(nd)
 
-
         # prints the tickers not found, if any
         if not_lst:
             word = ''
@@ -348,15 +317,11 @@ class Hash:
                     word = val
             self.write_list.append(str('\nTickers that were not found: ' + word + '\n'))
 
-
-
-
-
     def check_watchlist(self):
         """ Further screens the watchlist. Calls functions that call other functions. """
 
         if len(self.watchlist) > 0:
-            bar = progressbar.ProgressBar(max_value=len(self.watchlist)-1)
+            bar = progressbar.ProgressBar(max_value=len(self.watchlist) - 1)
         else:
             bar = progressbar.ProgressBar(max_value=0)
         foo = 0
@@ -375,14 +340,12 @@ class Hash:
             self.check_shorts_beta(nd)
             self.check_pain(nd)
 
-
         append_dict = {}
         # simply sorts the stocks into postive trends and not postive trends
         self.write_list.append('\n\n\nStocks with Positive Price and Volume Trend:\n')
         for nd in self.pos_vol_trend_list:
             if nd.price_uptrend:
                 self.write_list.append(nd.ticker + '\n')
-
 
         append_dict = {}
         self.write_list.append('\n\n\nShares with Shorts >= 15%:\n')
@@ -391,22 +354,18 @@ class Hash:
                 append_dict[nd.ticker] = nd.shorts_percent_float
         append_dict = sorted(append_dict.items(), key=operator.itemgetter(1), reverse=True)
         for val in append_dict:
-            self.write_list.append(str(str(val[0])+ '\t' + str(val[1]) + '\n'))
-
-
+            self.write_list.append(str(str(val[0]) + '\t' + str(val[1]) + '\n'))
 
         self.write_list.append('\n\n\nShares with price uptrend for 4 or more days and near 52 week low:\n')
         for nd in self.four_day_uptrend:
             if nd in self.good_yearly_low:
                 self.write_list.append(str(nd.ticker + '\n'))
 
-
         """
         self.write_list.append('\n\n\nShares within 35% of 52 week low:\n')
         for nd in self.good_yearly_low:
             self.write_list.append(str(nd.ticker + '\n'))
         """
-
 
         append_dict = {}
         self.write_list.append('\n\n\nPossible Great Stocks (Short Pain, 4 Day Price Uptrend):\n')
@@ -425,35 +384,34 @@ class Hash:
                 append_dict[nd] = nd.shorts_pain
         append_dict = sorted(append_dict.items(), key=operator.itemgetter(1), reverse=True)
         for val in append_dict:
-            self.write_list.append(str(str(val[0].ticker) + '\t' + str(val[1])) + '\t\t' + str(self.alt_price_uptrend(val[0])) + '\n')
+            self.write_list.append(
+                str(str(val[0].ticker) + '\t' + str(val[1])) + '\t\t' + str(self.alt_price_uptrend(val[0])) + '\n')
         temp_dict = append_dict
 
-
         append_dict = {}
-        self.write_list.append('\n\n\nThe Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain, 4 Day Price Uptrend):\n')
+        self.write_list.append(
+            '\n\n\nThe Perfect Stocks (Positive Price, Volume Trend, High Short Shares Float. Does not Check Beta) (Short Pain, 4 Day Price Uptrend):\n')
         for nd in self.pos_vol_trend_list:
             if nd not in temp_dict and nd.price_uptrend and nd in self.high_short_shares:
                 append_dict[nd] = nd.shorts_pain
         append_dict = sorted(append_dict.items(), key=operator.itemgetter(1), reverse=True)
         for val in append_dict:
-            self.write_list.append(str(str(val[0].ticker) + '\t' + str(val[1])) + '\t\t' + str(self.alt_price_uptrend(val[0])) + '\n')
-
+            self.write_list.append(
+                str(str(val[0].ticker) + '\t' + str(val[1])) + '\t\t' + str(self.alt_price_uptrend(val[0])) + '\n')
 
         self.write_list.append('\n\nTop 10 Stocks Experiencing Greatest Pain (Short Pain):\n')
         if not self.sorted_ranked_shares:
             pass
         elif len(self.sorted_ranked_shares) < 10:
             for stock in self.sorted_ranked_shares:
-                self.write_list.append(str(stock[0].ticker) + '\t' + str(stock[1]) + '\n')# + '\t\t' + str(self.alt_price_uptrend(val[0])) + '\n')
+                self.write_list.append(str(stock[0].ticker) + '\t' + str(
+                    stock[1]) + '\n')  # + '\t\t' + str(self.alt_price_uptrend(val[0])) + '\n')
         else:
             for stock in self.sorted_ranked_shares[:10]:
-                self.write_list.append(str(stock[0].ticker) + '\t' + str(stock[1]) + '\n')# + '\t\t' + str(self.alt_price_uptrend(val[0])) + '\n')
+                self.write_list.append(str(stock[0].ticker) + '\t' + str(
+                    stock[1]) + '\n')  # + '\t\t' + str(self.alt_price_uptrend(val[0])) + '\n')
 
         self.write_to_file()
-
-
-
-
 
     def write_to_file(self):
         """ Writes all the print statements to a file automatically named by the date of next trading day. """
@@ -464,13 +422,12 @@ class Hash:
         month = next_date[1]
         day = next_date[2]
 
-        filename = '../watch_lists/' + next_date[3] + '/' + month + '/watch_lists/watch_list_for_' + month + '_' + day + '_' + year + '.txt'
+        filename = '../watch_lists/' + next_date[
+            3] + '/' + month + '/watch_lists/watch_list_for_' + month + '_' + day + '_' + year + '.txt'
 
         with open(filename, 'w+') as f:
             for val in self.write_list:
                 f.write(val)
-
-
 
     def check_volume_trend(self, nd, page):
         """ Checks the volume of the ticker sent in. If the volume is greater than 150% of the average volume, then the ticker
@@ -515,7 +472,6 @@ class Hash:
 
                 prev_volume = volume
 
-
         if not nd.vol_uptrend:
             cont = True
             for t in trend_lst[4:]:
@@ -525,18 +481,14 @@ class Hash:
             if cont:
                 nd.vol_uptrend = True
 
-
         # removes from watchlist if it has had fewer than 2 days above 120% average volume, otherwise appends to proper list
         if nd.days_twenty_perc_above_avg_volume < 2:
-                self.removed_list.append(nd)
-                self.watchlist.remove(nd)
+            self.removed_list.append(nd)
+            self.watchlist.remove(nd)
         elif nd.vol_uptrend:
             self.pos_vol_trend_list.append(nd)
         else:
             self.neg_vol_trend_list.append(nd)
-
-
-
 
     def check_price_trend(self, nd, page):
         """ Ensures the stock has had a positive price trend the previous 6 trading days. If it does, it will stay on
@@ -585,16 +537,11 @@ class Hash:
             if cont:
                 nd.price_uptrend = True
 
-
         # appends node to proper list
         if nd.price_uptrend and nd not in self.pos_price_trend_list:
             self.pos_price_trend_list.append(nd)
         else:
             self.neg_price_trend_list.append(nd)
-
-
-
-
 
     def check_shorts_beta(self, nd):
         """ Use the statistics tab on yahoo finance and grabs lots of numbers to do calculations. Also, float means total
@@ -629,7 +576,6 @@ class Hash:
         elif nd.shorts_percent_float < 5:
             self.low_short_shares.append(nd)
 
-
         # checks beta here
         i = 20
         beta = 0
@@ -649,9 +595,6 @@ class Hash:
         else:
             self.high_beta_lst.append(nd)
             nd.high_beta = True
-
-
-
 
     def check_yearly_low(self, nd, page):
         """ Determines if the stock is within range of the yearly low. Assigns a weight to it based on this. """
@@ -679,7 +622,7 @@ class Hash:
             return
 
         try:
-            #if current price is within 35% of the low, where the 35% is based off the high
+            # if current price is within 35% of the low, where the 35% is based off the high
             if nd.curr_price <= (low * 1.35):
                 self.good_yearly_low.append(nd)
                 nd.yearly_low = True
@@ -691,9 +634,6 @@ class Hash:
 
         # calculation to determine what weight to assign it
 
-
-
-
     def check_pain(self, nd):
         """ Ranks stocks that have the highest probability of a short squeeze. Salculates short percentage by percentage
             change in a day. Could also incorporate over a weekly basis, bring in other metrics, etc. Perhaps incorporate the
@@ -702,9 +642,6 @@ class Hash:
         self.ranked_shares[nd] = round((nd.shorts_percent_float * nd.perc_change), 3)
         nd.shorts_pain = round((nd.shorts_percent_float * nd.perc_change), 3)
         self.sorted_ranked_shares = sorted(self.ranked_shares.items(), key=operator.itemgetter(1), reverse=True)
-
-
-
 
     def alt_price_uptrend(self, nd):
         """ Returns True if there is an uptrend of 4 days in a row or more. False otherwise. """
@@ -734,10 +671,6 @@ class Hash:
         # appends node to price trend list
         return True
 
-
-
-
-
     def get_page(self, url):
         """ Abstraction to protect against failed URL attempts. """
 
@@ -754,9 +687,7 @@ class Hash:
                 if sleep_cont > 5:
                     self.write_list.append('Something seems to be wrong with your connection\n')
 
-        return(soup(webpage, 'html.parser'))
-
-
+        return soup(webpage, 'html.parser')
 
     def next_open_date(self):
         """ Returns the date, in numbers, of the next day the market is open to properly name the txt file. """
@@ -790,4 +721,4 @@ class Hash:
         # year, month, day, COMPLETE year
         ret_lst = [year, month, day, str(tomorrow.year), ]
 
-        return(ret_lst)
+        return ret_lst

@@ -96,14 +96,14 @@ class Runner:
         for i in range(len(keyword_lst)):
             self.parse_data_column(keyword_lst[i], i, ticker)
 
-        # if ticker.ticker == 'KBSF':
-        #     [print(lst, "\n\n\n") for lst in ticker.lst_of_lsts]
+        # if ticker.ticker == 'HTBX':
+            # print(ticker.lst_of_lsts)
 
         self.write_to_file(ticker)
 
 
 
-    # @param: index (index of current thing to be searched (open, high, low, etc.))
+    # @param: page_index (index of current thing to be searched (open, high, low, etc.))
     # @param: index to be used to access correct list in lst_of_lsts
     # @param: Ticker (Security object)
     def parse_data_column(self, page_index, index, ticker):
@@ -122,17 +122,12 @@ class Runner:
                     if index == 0:
                         lst.append(time.strftime('%Y-%m-%d', time.localtime(float(num))))
                     else:
-                        lst.append(float(round(num, 5)))
+                        lst.append(round(float(num), 5))
                 except:
                     pass
                 num = ''
 
         ticker.lst_of_lsts[index] = lst
-
-        # for index, thing in enumerate(string[:4]):
-        #     ticker.lst_of_lsts[index].append(thing.text)
-        # for index, thing in enumerate(string[5:]):
-        #     ticker.lst_of_lsts[index + 4].append(thing.text)
 
 
 
