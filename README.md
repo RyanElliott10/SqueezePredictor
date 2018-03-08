@@ -8,12 +8,18 @@ Works on Python 2.7+ and 3.5+
 Python Library Installs:
 ------------------------
 
-pip install requests\n
+pip install requests
+
 pip install beautifulsoup
+
 pip install progressbar
+
 pip install requests_cache
+
 pip install pandas
+
 pip install urllib3
+
 
 Tools:
 ------
