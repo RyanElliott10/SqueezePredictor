@@ -6,6 +6,7 @@ A Python script to gather a list of tickers from a CSV file, scrape data from Ya
 Works on Python 2.7+ and 3.5+
 
 Python Library Installs:
+------------------------
 
 pip install requests
 pip install beautifulsoup
@@ -15,10 +16,12 @@ pip install pandas
 pip install urllib3
 
 Tools:
+------
 
 SQLite
 
 Run:
+----
 
 python short_squeeze_runner.py
 python data_formatting
