@@ -274,25 +274,6 @@ class Hash:
                     nd.curr_price = float(page.findAll('span')[10].text.strip())
                 except:
                     cont = False
-                    print(ticker)
-
-
-                # except:
-                #     try:
-                #         while type(curr) is not bs4.BeautifulSoup:  # and count < 5:
-                #             client_page = uReq(url)
-                #             webpage = client_page.read()
-
-                #             client_page.close()
-                #             page = soup(webpage, 'html.parser')
-
-                #             curr = page.encode(sys.stdout.encoding, errors='backslashreplace').decode('utf-8')
-                #             curr = soup(curr, 'html.parser')
-                #     except:
-                #         print("Number 1:", ticker.ticker)
-                #         not_lst.append(ticker)
-                #         cont = False
-
 
                 if cont:
                     # checks if the stock is within 35% of 52 week low
@@ -715,11 +696,14 @@ class Hash:
         cont = True
         time.sleep(1)
 
+        sess = requests.session()
+
         while cont:
             try:
-                webpage = requests.get(url, headers={'User-Agent': 'Custom'} )
-                if webpage.status_code == 404:
-                    print(url)
+                webpage = sess.get(url, headers={'User-Agent': 'Custom'})
+                while webpage.status_code == 404:
+                    time.sleep(.1)
+                    webpage = sess.get(url, headers={'User-Agent': 'Custom'})
                 cont = False
             except:
                 sleep_cont += 1
