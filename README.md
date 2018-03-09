@@ -13,7 +13,7 @@ Works on Python 2.7+ and 3.5+
 
 KNOWN BUG: 
 ----------
-Yahoo! Finance recently reformatted their pages, so the script will not appropriately parse every webpage. Update coming soon.
+Due to Yahoo! Finance limiting requests, the website fetching phase will take a while. Update to correct this coming soon.
 
 Python Library Installs:
 ------------------------
