@@ -1,0 +1,78 @@
+Stocks with Positive Price and Volume Trend:
+
+HTBX	-6.57
+NIHD	6.03	Watch Again
+FFHL	-4.36
+CLBS	4.82
+MNKD	-3.36
+OPGN	-1.78
+WIN	0.0
+TRXC	2.03
+
+
+Shares with Shorts >= 15%:
+
+LLEX	-2.8
+BTE	-2.87
+APWC	-2.04
+LBY	11.48	Watch Again
+HGSH	-0.72
+ESNC	-5.27
+AEHR	-4.7
+
+
+Shares with price uptrend for 4 or more days and near 52 week low:
+
+HEAR	-3.47
+EVLV	-3.39
+ICLK	0.16
+HLIT	-0.83
+GIM	-1.25
+IPWR	-2.42
+KOOL	-0.35
+CLDX	-0.83
+OBE	-4.8
+CMRX	-0.2
+FSM	-3.85
+EXK	-4.72
+AMTX	1.69
+CUI	1.43
+BKT	-0.34
+WIN	0.0
+JMP	-0.56
+ABAC	2.06
+FSI	0.0
+PTX	0.8
+NYRT	0.48
+BLNK	-2.62
+PGLC	-4.04
+XELA	0.18
+GER	-0.77
+ZIXI	0.25
+PIM	-0.63
+TIL	2.01
+PMM	-0.28
+SGBX	0.0
+WG	-1.01
+SN	-15.76
+EPE	-8.67
+SMRT	-1.54
+NIHD	6.03	Watch Again
+FFHL	-4.36
+CLBS	4.82
+MNKD	-3.36
+NIHD	6.03	Watch Again
+OPGN	-1.78
+TRXC	2.03
+LLEX	-2.8
+NIHD	6.03	Watch Again
+
+
+Possible Great Stocks (Short Pain, 4 Day Price Uptrend):
+
+WIN	0.0
+HTBX	-6.57
+RHE	4.0
+KDMN	-1.6
+DTRM	3.23
+FFHL	-4.36

@@ -1,0 +1,58 @@
+Stocks with Positive Price and Volume Trend:
+
+CYH	-4.27
+NBRV	4.22
+MYO	9.98	Watch Again
+DTRM	-5.88
+JONE	4.12
+ANW	2.13
+JONE	4.12
+CYH	-4.27
+MTBC	4.07
+
+
+Shares with Shorts >= 15%:
+
+LBY	0.45
+GIM	-0.63
+RNWK	1.27
+IFON	-5.41
+OBE	4.13
+ASM	-3.85
+
+
+Shares with price uptrend for 4 or more days and near 52 week low:
+
+CBL	2.08
+LSCC	0.83
+CUI	-3.51
+OCSL	0.69
+ITI	0.17
+PHK	0.67
+FAC	0.0
+ADXS	3.16
+ARTX	-3.03
+NCV	0.43
+RMTI	2.03
+JONE	4.12
+CYH	-4.27
+NBRV	4.22
+DTRM	-5.88
+MYO	9.98	Watch Again
+ANW	2.13
+JONE	4.12
+CYH	-4.27
+JONE	4.12
+
+
+Possible Great Stocks (Short Pain, 4 Day Price Uptrend):
+
+CYH	-4.27
+VSAR	4.52
+MTBC	4.07
+PIXY	-2.33
+EYES	9.04	Watch Again
+CYTR	-1.2
+NBRV	4.22
+RNWK	1.27
+OTIV	2.75
