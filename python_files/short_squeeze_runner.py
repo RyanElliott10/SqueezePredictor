@@ -9,19 +9,12 @@
 import short_squeeze_ds
 import csv
 
-# imports for Yahoo! Finance API, Pandas, and MatPlotLib
-import datetime
-
-"""import matplotlib.pyplot as plt
-from matplotlib import style
-from matplotlib.finance import candlestick_ohlc
-import matplotlib.dates as mdates"""
+# imports for Pandas
 import pandas as pd
 import pandas_datareader.data as web
-from yahoo_finance import Share
 
 
-def insert_from_csv(csv_lst, max_price, stop_num=999999):
+def insert_from_csv(csv_lst, max_price, stop_num=9999999):
     """ Takes in a list of CSV files that are then inserted. """
 
     for f in csv_lst:
@@ -61,5 +54,3 @@ print('\n' + 'Screening stocks:')
 hash_table.init_run()
 print('\n' + 'Checking watchlist:')
 hash_table.check_watchlist()
-
-# BUG: Lots of stocks that couldn't be found - probably the ASCII formatting issue again

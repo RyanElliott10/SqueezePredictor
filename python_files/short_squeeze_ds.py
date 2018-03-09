@@ -1,14 +1,10 @@
 import datetime
 import time
+import node_hash_table
 
 # imports for BeautifulSoup
 import operator
 import bs4
-
-try:  # python3
-    from urllib.request import urlopen as uReq
-except:  # python2
-    from urllib2 import urlopen as uReq
 from bs4 import BeautifulSoup as soup
 
 import sys
@@ -28,7 +24,6 @@ class Node:
         self.prev = None
         self.ticker = ticker
         self.prev_close = 0
-        self.open = 0
         self.curr_price = 0
         self.perc_change = 0
         self.avg_volume = 0
@@ -70,6 +65,8 @@ class Hash:
         self.bad_yearly_low = []
         self.four_day_uptrend = []
 
+
+
     def get_primes(self, filename):
         """ Reads from file containing list of primes up to 200000 and appends each prime to a list. """
 
@@ -77,17 +74,25 @@ class Hash:
         for word in f.read().split():
             self.primes_list.append(int(word))
 
+
+
     def get_load_fact(self):
         return self.num_items / len(self.hash_table)
 
+
+
     def my_hash(self, key, num):
         return (key + (num * num)) % len(self.hash_table)
+
+
 
     def find_capacity(self):
         for val in self.primes_list:
             if self.capacity * 2 < val:
                 self.capacity = val
                 break
+
+
 
     def rehash(self):
         """ Rehashes the entire hash_table. """
@@ -117,6 +122,8 @@ class Hash:
                     num += 1
 
         self.hash_table = tmp_table
+
+
 
     def insert(self, ticker):
         """ The key will be the ascii value of each char multiplied by the total so far. Returns -1 if it cannot be entered. """
@@ -151,6 +158,8 @@ class Hash:
             val += 1
         return -1
 
+
+
     def remove(self, ticker):
         """ Will remove the node at the hash_value. Returns -1 if not found. """
 
@@ -169,6 +178,8 @@ class Hash:
                 return tmp
             val += 1
         return -1
+
+
 
     def get(self, ticker):
         """ Will return the node which will allow you to access whatever you want (ticker, price, etc.). """
@@ -194,6 +205,8 @@ class Hash:
             if val is not None:
                 print('$' + val.ticker)
 
+
+
     # Utility function to prefetch webpages concurrently
     def pre_fetch_webpages(self):
         requests_cache.install_cache('cache', backend='sqlite', expire_after=3600)
@@ -206,19 +219,31 @@ class Hash:
                 bar.update(foo)
                 foo += 1
 
+
+
     def get_page_async(self, nd):
         if nd is not None:
             ticker = nd.ticker
-            url = 'https://finance.yahoo.com/quote/' + ticker + '?p=' + ticker
-            page = self.get_page(url)
-            url = 'https://finance.yahoo.com/quote/' + ticker + '/history?p=' + ticker
-            page = self.get_page(url)
-            url = 'https://finance.yahoo.com/quote/' + ticker + '/key-statistics?p=' + ticker
-            page = self.get_page(url)
+            url = 'https://finance.yahoo.com/quote/{0}?p={0}'.format(ticker)
+            page = self.get_page(url.strip())
+            url = 'https://finance.yahoo.com/quote/{0}/history?p={0}'.format(ticker)
+            page = self.get_page(url.strip())
+            url = 'https://finance.yahoo.com/quote/{0}/key-statistics?p={0}'.format(ticker)
+            page = self.get_page(url.strip())
+
+
+
+
+
 
             ########################################################################
             #####     BEGINNING OF TRUE FUNCTIONS (I.E. THE SCREENING PART)    #####
             ########################################################################
+
+
+
+
+
 
     # Currently, the 'perfect' stock has a volume and price uptrend, >= 5% shares float, beta > 1% or < -1, price at or below $10.00,
     # and daily percent change between the days is >= 5%.
@@ -244,59 +269,53 @@ class Hash:
                 page = self.get_page(url)
 
                 # gets the current price
+                # try:
                 try:
-                    nd.curr_price = float(page.findAll('span')[10].text)
+                    nd.curr_price = float(page.findAll('span')[10].text.strip())
                 except:
-                    try:
-                        while type(curr) is not bs4.BeautifulSoup:  # and count < 5:
-                            client_page = uReq(url)
-                            webpage = client_page.read()
+                    cont = False
+                    print(ticker)
 
-                            client_page.close()
-                            page = soup(webpage, 'html.parser')
 
-                            curr = page.encode(sys.stdout.encoding, errors='backslashreplace').decode('utf-8')
-                            curr = soup(curr, 'html.parser')
-                    except:
-                        not_lst.append(ticker)
-                        cont = False
+                # except:
+                #     try:
+                #         while type(curr) is not bs4.BeautifulSoup:  # and count < 5:
+                #             client_page = uReq(url)
+                #             webpage = client_page.read()
+
+                #             client_page.close()
+                #             page = soup(webpage, 'html.parser')
+
+                #             curr = page.encode(sys.stdout.encoding, errors='backslashreplace').decode('utf-8')
+                #             curr = soup(curr, 'html.parser')
+                #     except:
+                #         print("Number 1:", ticker.ticker)
+                #         not_lst.append(ticker)
+                #         cont = False
+
 
                 if cont:
                     # checks if the stock is within 35% of 52 week low
                     self.check_yearly_low(nd, page)
 
                     # gets the previous close price
-                    nd.prev_close = float(page.findAll('span', {'class': 'Trsdu(0.3s) '})[0].text)
+
+                    # gets the previous close price and average volume
+
+                    for thing in page.findAll('tr'):
+                        if 'Previous Close' in thing.text:
+                            nd.prev_close = float(thing.text.strip()[14:])
+                        elif 'Avg. Volume' in thing.text:
+                            nd.avg_volume = float(thing.text.strip()[13:].replace(',', ''))
+                            break
+                    if not nd.prev_close and not nd.avg_volume:
+                        not_lst.append(ticker)
 
                     # calculates percent change and rounds to 3 decimals
                     try:
                         nd.perc_change = round((((nd.curr_price / nd.prev_close) - 1) * 100), 3)
                     except:
                         nd.perc_change = 0
-
-                    # gets the average volume
-                    text_avg_volume = page.findAll('span', {'class': 'Trsdu(0.3s) '})[5].text.replace(',', '')
-
-                    # safeguards against any failed volume-getting attempts
-                    try:
-                        nd.avg_volume = float(text_avg_volume)
-                    except:
-                        # tries another spot the volume could be
-                        try:
-                            text_avg_volume = page.findAll('span', {'class': 'Trsdu(0.3s) '})[4].text
-                            text_avg_volume = text_avg_volume.replace(',', '')
-                            nd.avg_volume = float(text_avg_volume)
-                        except:
-                            # tries another spot the volume could be
-                            try:
-                                text_avg_volume = page.findAll('span', {'class': 'Trsdu(0.3s) '})[3].text
-                                text_avg_volume = text_avg_volume.replace(',', '')
-                                nd.avg_volume = float(text_avg_volume)
-                            except:
-                                # will not be added to watchlist
-                                self.write_list.append(str(ticker + " - Couldn't get average volume\n"))
-                                not_lst.append(ticker)
-                                cont = False
 
                     # appends to the watchlist if it fits criteria
                     if cont and nd.perc_change >= 5:
@@ -316,6 +335,8 @@ class Hash:
                 else:
                     word = val
             self.write_list.append(str('\nTickers that were not found: ' + word + '\n'))
+
+
 
     def check_watchlist(self):
         """ Further screens the watchlist. Calls functions that call other functions. """
@@ -413,6 +434,8 @@ class Hash:
 
         self.write_to_file()
 
+
+
     def write_to_file(self):
         """ Writes all the print statements to a file automatically named by the date of next trading day. """
 
@@ -428,6 +451,8 @@ class Hash:
         with open(filename, 'w+') as f:
             for val in self.write_list:
                 f.write(val)
+
+
 
     def check_volume_trend(self, nd, page):
         """ Checks the volume of the ticker sent in. If the volume is greater than 150% of the average volume, then the ticker
@@ -490,6 +515,8 @@ class Hash:
         else:
             self.neg_vol_trend_list.append(nd)
 
+
+
     def check_price_trend(self, nd, page):
         """ Ensures the stock has had a positive price trend the previous 6 trading days. If it does, it will stay on
         the watchlist, otherwise it will be removed. """
@@ -542,6 +569,8 @@ class Hash:
             self.pos_price_trend_list.append(nd)
         else:
             self.neg_price_trend_list.append(nd)
+
+
 
     def check_shorts_beta(self, nd):
         """ Use the statistics tab on yahoo finance and grabs lots of numbers to do calculations. Also, float means total
@@ -596,6 +625,8 @@ class Hash:
             self.high_beta_lst.append(nd)
             nd.high_beta = True
 
+
+
     def check_yearly_low(self, nd, page):
         """ Determines if the stock is within range of the yearly low. Assigns a weight to it based on this. """
 
@@ -634,6 +665,8 @@ class Hash:
 
         # calculation to determine what weight to assign it
 
+
+
     def check_pain(self, nd):
         """ Ranks stocks that have the highest probability of a short squeeze. Salculates short percentage by percentage
             change in a day. Could also incorporate over a weekly basis, bring in other metrics, etc. Perhaps incorporate the
@@ -642,6 +675,8 @@ class Hash:
         self.ranked_shares[nd] = round((nd.shorts_percent_float * nd.perc_change), 3)
         nd.shorts_pain = round((nd.shorts_percent_float * nd.perc_change), 3)
         self.sorted_ranked_shares = sorted(self.ranked_shares.items(), key=operator.itemgetter(1), reverse=True)
+
+
 
     def alt_price_uptrend(self, nd):
         """ Returns True if there is an uptrend of 4 days in a row or more. False otherwise. """
@@ -671,15 +706,20 @@ class Hash:
         # appends node to price trend list
         return True
 
+
+
     def get_page(self, url):
         """ Abstraction to protect against failed URL attempts. """
 
         sleep_cont = 0
         cont = True
+        time.sleep(1)
 
         while cont:
             try:
-                webpage = requests.get(url).text
+                webpage = requests.get(url, headers={'User-Agent': 'Custom'} )
+                if webpage.status_code == 404:
+                    print(url)
                 cont = False
             except:
                 sleep_cont += 1
@@ -687,10 +727,12 @@ class Hash:
                 if sleep_cont > 5:
                     self.write_list.append('Something seems to be wrong with your connection\n')
 
-        return soup(webpage, 'html.parser')
+        return soup(webpage.content, 'html.parser')
+
+
 
     def next_open_date(self):
-        """ Returns the date, in numbers, of the next day the market is open to properly name the txt file. """
+        """ Returns the date of the next day the market is open to properly name the txt file. """
 
         today = datetime.date.today()
         tomorrow = today + datetime.timedelta(days=1)
@@ -703,6 +745,8 @@ class Hash:
         # tomorrow.weekday() returns int from 0-6, where 0 is Monday and 6 is Sunday
         if tomorrow.weekday() == 5:
             time_delta += 2
+        elif tomorrow.weekday() == 6:
+            time_delta += 1
 
         tomorrow = today + datetime.timedelta(days=time_delta)
         month = tomorrow.month
