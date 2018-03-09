@@ -1,47 +1,46 @@
-# Short Squeeze Predictor
-Runner file: short_squeeze_runner.py
-Supporting files: short_squeeze_ds.py, ss_ds_node.py, primes_to_200000.txt, NYSE_companies.csv, nasdaq_companies.csv
+Short Squeeze Predictor - Python
+================================
 
-DOCUMENTATION:
+A Python script to gather a list of tickers from a CSV file, scrape data from Yahoo! Finance, analyze historical and current data for each security, and determine its susceptibility to a short squeeze. Upcoming feature: machine learning implementation to use previous data and determine which data is needed to determine a stock's viablity to be squeezed.
 
-short_squeeze_runner.py:
-  Runner program, imports all necessary items and starts the program
+Running short_squeeze_runner.py, will run a script which will parse a CSV file (included if git clone), collect tickers, prefetch the appropriate Yahoo! Finance pages to gather data, then scrape that data and write the stocks most susceptible to a short squeeze into a .txt file.
 
-short_squeeze_ds.py
+Running check_previous_watchlist.py will run a script which will parse the previous day's wathclist and again scrape data from Yahoo! Finance and determine whether it was a winner (+15%) or not.
 
-  class Hash:
-    def __init__(self, size=7949):
-      Initializes proper variables, creates list of length size and assigns None to each. slot. Calls the function get_primes(filename)
+Running data_formatting.py will run a script which parses all of the previous watchlist .txt files, collects every unique ticker, gathers historical data up to a year old, and stores it into a SQLite database.
 
-    def get_primes(self, filename):
-      Reads in from a txt file and appends all numbers in said text file to the primes_list variable.
+Works on Python 2.7+ and 3.5+
 
-    def get_load_factor(self):
-      Returns the load factor of the hash table.
+KNOWN BUG: 
+----------
+Yahoo! Finance recently reformatted their pages, so the script will not appropriately parse every webpage. Update coming soon.
 
-    def my_hash(self, key, num):
-      Returns the hash value to be used in the hash table.
+Python Library Installs:
+------------------------
 
-    def find_capacity(self):
-      Sets the capacity variable to the correct value.
+pip install requests
 
-    def rehash(self):
-      Utilizes quadratic probing to rehash the entire hash_table variable. Increases the capacity to the next known suitable prime number.
+pip install beautifulsoup
 
-    def insert(self, ticker, ame=None, prev_close=None, open_p=None, close=None):
-      Inserts a ticker fed from the runner program into the hash_table variable. Uses my_hash and rehash.
+pip install progressbar
 
-    def remove(self, ticker):
-      Removes said ticker from the hash_table variable.
+pip install requests_cache
 
-    def get(self, ticker):
-      Returns the pointer to the node container the ticker.
+pip install request
 
-    def print_tcker(self):
-      Prints every ticker in the hash_table variable.
+pip install pandas
 
-    def get_avg_volume(self, ticker, days=0):
-      Returns the average volume for the ticker that is sent in.
 
-    def init_run(self, ticker):
-      Called by the runner program, will test to see if the day's volume is above 20% above the average volume. If it is, it will add 1 to the days_above_twenty variable as found in the ss_ds_node.py file.
+Tools:
+------
+
+SQLite
+
+Run:
+----
+
+python short_squeeze_runner.py
+
+python check_previous_watchlist.py
+
+python data_formatting.py
