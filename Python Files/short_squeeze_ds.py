@@ -15,10 +15,6 @@ import requests_cache
 import concurrent.futures
 
 
-
-cnt = 0
-
-
 # nodes used in the hash table
 class Node:
 
