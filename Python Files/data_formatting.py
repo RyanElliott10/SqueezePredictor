@@ -153,7 +153,7 @@ class Runner:
 
         # while self.year <= int(str(today.year)[2:]) and self.month[0] <= today.month and self.day <= today.day:
         while count < 100:
-            watchlist = '../watch_lists/20' + str(self.year) + '/' + str(self.month[0]) + '/watch_lists' + '/watch_list_for_' + str(self.month[0]) + '_' + str(
+            watchlist = '../Watchlists/20' + str(self.year) + '/' + str(self.month[0]) + '/Watchlists' + '/watch_list_for_' + str(self.month[0]) + '_' + str(
                 self.day) + '_' + str(self.year) + '.txt'
 
             if os.path.exists(watchlist):
@@ -207,7 +207,6 @@ class Runner:
     def get_page_async(self, nd):
         if nd is not None:
             url = 'https://query1.finance.yahoo.com/v8/finance/chart/' + nd + '?formatted=true&crumb=h.8f9xpa6IF&lang=en-US&region=US&interval=1d&events=div%7Csplit&range=1y&corsDomain=finance.yahoo.com'
-            # url = 'https://finance.yahoo.com/quote/' + nd + '/history?p=' + nd
             page = self.get_page(url)
 
             # Goes through the list, replaces the entry at the index of the ticker with a tupe containing (ticker, BS4 soup object)
@@ -229,6 +228,7 @@ class Runner:
                 sleep_cont += 1
                 time.sleep(5)
                 if sleep_cont > 5:
+                    print(url)
                     break
 
         return (soup(webpage, 'html.parser'))
