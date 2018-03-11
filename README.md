@@ -11,10 +11,6 @@ Running data_formatting.py will run a script which parses all of the previous wa
 
 Works on Python 2.7+ and 3.5+
 
-KNOWN BUG: 
-----------
-Due to Yahoo! Finance limiting requests, the website fetching phase will take a while. Update to correct this coming soon.
-
 Python Library Installs:
 ------------------------
 
