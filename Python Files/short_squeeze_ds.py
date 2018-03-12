@@ -229,6 +229,7 @@ class Hash:
 
 
 
+
 														########################################################################
 														########################################################################
 														#####     BEGINNING OF TRUE FUNCTIONS (I.E. THE SCREENING PART)    #####
@@ -496,53 +497,33 @@ class Hash:
 		the watchlist, otherwise it will be removed. """
 
 		tr_list = page.findAll('tr')
-		prev_close = 0
-		price_uptrend = 0
 		price_downtrend = 0
+		try:
+			prev_close = float(tr_list[7].findAll('td')[5].text)
+		except:
+			return
 
 		# iterates through the most recent 6 trading days
-		trend_lst = []
-
-		for i, tr in enumerate(reversed(tr_list[8:12])):
+		# Rules: it can only have 1 day not positive, the others MUST have consistent 5% increases
+		for i, tr in enumerate(reversed(tr_list[1:6])):
 
 			# safeguards against any failed price gather attempts
 			try:
 				close = float(tr.findAll('td')[5].text)
 			except:
-				break
+				return
 
 			# performs the checks for price uptrend
-			if close > (prev_close * 1.025):
-				price_uptrend += 1
-				price_downtrend = 0
-				trend_lst.append(True)
-			else:
+			if close < (prev_close * 1.05):
 				price_downtrend += 1
-				trend_lst.append(False)
-
-			if price_downtrend >= 2:
-				price_uptrend = 0
+			if price_downtrend > 1:
 				nd.price_uptrend = False
-			elif price_uptrend >= 3:
-				price_downtrend = 0
-				nd.price_uptrend = True
 
 			prev_close = close
-
-		if not nd.price_uptrend:
-			cont = True
-			for t in trend_lst[4:]:
-				if not t:
-					cont = False
-					break
-			if cont:
-				nd.price_uptrend = True
 
 		# appends node to proper list
 		if nd.price_uptrend and nd not in self.pos_price_trend_list:
 			self.pos_price_trend_list.append(nd)
-		else:
-			self.neg_price_trend_list.append(nd)
 
 
 

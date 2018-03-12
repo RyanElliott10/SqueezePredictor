@@ -12,12 +12,14 @@ import csv
 import data_support
 import ds
 
+import shutil
+
 # imports for Pandas
 import pandas as pd
 import pandas_datareader.data as web
 
 
-def insert_from_csv(csv_lst, max_price, stop_num=9999999):
+def insert_from_csv(csv_lst, hash_table, max_price, stop_num=9999999):
     """ Takes in a list of CSV files that are then inserted. """
 
     for f in csv_lst:
@@ -32,33 +34,66 @@ def insert_from_csv(csv_lst, max_price, stop_num=9999999):
                     hash_table.insert(row[0])
 
 
-def manual_insert(lst):
+def manual_insert(lst, hash_table):
     """ Allows the user to manually enter tickers, mainly for testing. """
 
     for row in lst:
         hash_table.insert(row)
 
 
-hash_table = short_squeeze_ds.Hash()
-# hash_table = data_support.Hash()
 
-csv_lst = ['../Support Files/CSV Files/companylist.csv', '../Support Files/CSV Files/companylist-2.csv',
-           '../Support Files/CSV Files/companylist-3.csv']
-csv_lst2 = ['../Support Files/CSV Files/companylist-2.csv']
-manual_tickers = []
+def runner(mode): # In the future, take in command line args here
 
-insert_from_csv(csv_lst, 7.50)
+    hash_table = short_squeeze_ds.Hash()
 
-ds = ds.Functionality(hash_table)
+    # src1 = "../../../../../Downloads/companylist.csv"
+    # src2 = "../../../../../Downloads/companylist-2.csv"
+    # src3 = "../../../../../Downloads/companylist-3.csv"
+    # dst = "../Support\ Files/CSV\ Files/"
 
-print('Total tickers to search:', hash_table.num_items, '\n')
+    # shutil.move(src1, dst)
+    # shutil.move(src2, dst)
+    # shutil.move(src3, dst)
 
-# TODO: allow user to skip pre-fetch .. this will also invalidate cache
-print('Prefetching webpages:')
-hash_table.pre_fetch_webpages()
+    if mode == 0:
+        # test
+        csv_lst = ['../Support Files/CSV Files/companylist-2.csv']
+    elif mode == 1:
+        # full run
+        csv_lst = ['../Support Files/CSV Files/companylist.csv', '../Support Files/CSV Files/companylist-2.csv',
+               '../Support Files/CSV Files/companylist-3.csv']
 
-print('\n' + 'Screening stocks:')
-hash_table.init_run()
+    #To-Do: Ask for user input to determine what to do (run full, or test up to n amount of tickers)
 
-print('\n' + 'Checking watchlist:')
-hash_table.check_watchlist()
+    insert_from_csv(csv_lst, hash_table, 7.50)
+
+    print('Total tickers to search:', hash_table.num_items, '\n')
+
+    print('Prefetching webpages:')
+    hash_table.pre_fetch_webpages()
+
+    print('\n' + 'Screening stocks:')
+    hash_table.init_run()
+
+    print('\n' + 'Checking watchlist:')
+    hash_table.check_watchlist()
+
+
+def main():
+    mode = input("Mode (Test/Full): ")
+    for char in 'test':
+        if char in mode.lower():
+            mode = 0
+            break
+    if mode != 0:
+        for char in 'full':
+            if char in mode.lower():
+                mode = 1
+                break
+    if mode != 0 and mode != 1:
+        mode = 1
+    runner(mode)
+
+
+if __name__ == "__main__":
+    main()
