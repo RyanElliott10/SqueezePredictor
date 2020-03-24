@@ -1,5 +1,9 @@
-Short Squeeze Predictor - Python
-================================
+# Short Squeeze Predictor
+
+## Disclaimer
+This project was initiated by a younger, more naive self. Rather than using Python's built in dict (and therefore hashing), I wrote my own (poorly implemented) hashtable as practice. I regret nothing, but proceed with using this code at your own risk.
+
+## About
 
 A Python script to gather a list of tickers from a CSV file, scrape data from Yahoo! Finance, analyze historical and current data for each security, and determine its susceptibility to a short squeeze. Upcoming feature: machine learning implementation to use previous data and determine which data is needed to determine a stock's viablity to be squeezed.
 
@@ -11,8 +15,7 @@ Running data_formatting.py will run a script which parses all of the previous wa
 
 Works on Python 2.7+ and 3.5+
 
-Python Library Installs:
-------------------------
+## Python Library Installs
 
 pip install requests
 
@@ -27,13 +30,11 @@ pip install request
 pip install pandas
 
 
-Tools:
-------
+## Tools
 
 SQLite
 
-Run:
-----
+## Run
 
 python runner.py
 
