@@ -1,4 +1,4 @@
-requests==2.20.0
+requests==2.31.0
 beautifulsoup4==4.6.0
 matplotlib==2.1.1
 pandas==0.22.0
